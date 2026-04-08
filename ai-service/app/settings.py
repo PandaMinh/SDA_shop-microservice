@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -47,6 +48,6 @@ TIME_ZONE = "Asia/Ho_Chi_Minh"
 USE_I18N = True
 USE_TZ = True
 
-PRODUCT_CATALOG_URL = "http://api-gateway:8000/api/products"
+PRODUCT_CATALOG_URL = os.environ.get("PRODUCT_CATALOG_URL", "http://api-gateway:8000/api/products")
 CEREBRAS_MODEL = "qwen-3-235b-a22b-instruct-2507"
 CEREBRAS_API_KEY_ENV = "CEREBRAS_API_KEY"
