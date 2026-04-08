@@ -1,0 +1,256 @@
+version: '3.8'
+
+services:
+  # ─── Databases ───────────────────────────────────────────────────────────────
+
+  mysql-customer:
+    image: mysql:8.0
+    container_name: mysql-customer
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: customer_db
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "33061:3306"
+    volumes:
+      - customer_mysql_data:/var/lib/mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot123"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  mysql-staff:
+    image: mysql:8.0
+    container_name: mysql-staff
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: staff_db
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "3307:3306"
+    volumes:
+      - staff_mysql_data:/var/lib/mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot123"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  postgres-mobile:
+    image: postgres:15
+    container_name: postgres-mobile
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mobile_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "54320:5432"
+    volumes:
+      - mobile_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  postgres-desktop:
+    image: postgres:15
+    container_name: postgres-desktop
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: desktop_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5433:5432"
+    volumes:
+      - desktop_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  postgres-clothes:
+    image: postgres:15
+    container_name: postgres-clothes
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: clothes_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5434:5432"
+    volumes:
+      - clothes_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  postgres-cart:
+    image: postgres:15
+    container_name: postgres-cart
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: cart_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5435:5432"
+    volumes:
+      - cart_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ─── Backend Services ─────────────────────────────────────────────────────────
+
+  mobile-service:
+    build: ./mobile-service
+    container_name: mobile-service
+    restart: unless-stopped
+    ports:
+      - "8003:8000"
+    environment:
+      DB_HOST: postgres-mobile
+      DB_NAME: mobile_db
+      DB_USER: postgres
+      DB_PASSWORD: postgres123
+      DJANGO_SETTINGS_MODULE: app.settings
+    depends_on:
+      postgres-mobile:
+        condition: service_healthy
+
+  desktop-service:
+    build: ./desktop-service
+    container_name: desktop-service
+    restart: unless-stopped
+    ports:
+      - "8004:8000"
+    environment:
+      DB_HOST: postgres-desktop
+      DB_NAME: desktop_db
+      DB_USER: postgres
+      DB_PASSWORD: postgres123
+      DJANGO_SETTINGS_MODULE: app.settings
+    depends_on:
+      postgres-desktop:
+        condition: service_healthy
+
+  staff-service:
+    build: ./staff-service
+    container_name: staff-service
+    restart: unless-stopped
+    ports:
+      - "8002:8000"
+    environment:
+      DB_HOST: mysql-staff
+      DB_NAME: staff_db
+      DB_USER: root
+      DB_PASSWORD: root123
+      DJANGO_SETTINGS_MODULE: app.settings
+    depends_on:
+      mysql-staff:
+        condition: service_healthy
+
+  customer-service:
+    build: ./customer-service
+    # container_name: customer-service
+    restart: unless-stopped
+    ports:
+      - "8001:8000"
+    environment:
+      DB_HOST: mysql-customer
+      DB_NAME: customer_db
+      DB_USER: root
+      DB_PASSWORD: root123
+      DJANGO_SETTINGS_MODULE: app.settings
+    depends_on:
+      mysql-customer:
+        condition: service_healthy
+
+  clothes-service:
+    build: ./clothes-service
+    container_name: clothes-service
+    restart: unless-stopped
+    ports:
+      - "8005:8000"
+    environment:
+      DB_HOST: postgres-clothes
+      DB_NAME: clothes_db
+      DB_USER: postgres
+      DB_PASSWORD: postgres123
+      DJANGO_SETTINGS_MODULE: app.settings
+    depends_on:
+      postgres-clothes:
+        condition: service_healthy
+
+  cart-service:
+    build: ./cart-service
+    container_name: cart-service
+    restart: unless-stopped
+    ports:
+      - "8006:8000"
+    environment:
+      DB_HOST: postgres-cart
+      DB_NAME: cart_db
+      DB_USER: postgres
+      DB_PASSWORD: postgres123
+      DJANGO_SETTINGS_MODULE: app.settings
+      MOBILE_SERVICE_URL: http://mobile-service:8000
+      DESKTOP_SERVICE_URL: http://desktop-service:8000
+      CLOTHES_SERVICE_URL: http://clothes-service:8000
+    depends_on:
+      postgres-cart:
+        condition: service_healthy
+
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      DJANGO_SETTINGS_MODULE: gateway.settings
+      CUSTOMER_SERVICE_URL: http://customer-service:8000
+      STAFF_SERVICE_URL: http://staff-service:8000
+      MOBILE_SERVICE_URL: http://mobile-service:8000
+      DESKTOP_SERVICE_URL: http://desktop-service:8000
+      CLOTHES_SERVICE_URL: http://clothes-service:8000
+      CART_SERVICE_URL: http://cart-service:8000
+    depends_on:
+      - customer-service
+      - staff-service
+      - mobile-service
+      - desktop-service
+      - clothes-service
+      - cart-service
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_API_URL: http://localhost:8000
+    depends_on:
+      - api-gateway
+
+volumes:
+  customer_mysql_data:
+  staff_mysql_data:
+  mobile_pg_data:
+  desktop_pg_data:
+  clothes_pg_data:
+  cart_pg_data:
