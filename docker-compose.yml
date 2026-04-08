@@ -120,7 +120,7 @@ services:
     container_name: mobile-service
     restart: unless-stopped
     ports:
-      - "8003:8000"
+      - "19005:8000"
     environment:
       DB_HOST: postgres-mobile
       DB_NAME: mobile_db
@@ -136,7 +136,7 @@ services:
     container_name: desktop-service
     restart: unless-stopped
     ports:
-      - "8004:8000"
+      - "19006:8000"
     environment:
       DB_HOST: postgres-desktop
       DB_NAME: desktop_db
@@ -152,7 +152,7 @@ services:
     container_name: staff-service
     restart: unless-stopped
     ports:
-      - "8002:8000"
+      - "19004:8000"
     environment:
       DB_HOST: mysql-staff
       DB_NAME: staff_db
@@ -168,7 +168,7 @@ services:
     # container_name: customer-service
     restart: unless-stopped
     ports:
-      - "8001:8000"
+      - "19003:8000"
     environment:
       DB_HOST: mysql-customer
       DB_NAME: customer_db
@@ -184,7 +184,7 @@ services:
     container_name: clothes-service
     restart: unless-stopped
     ports:
-      - "8005:8000"
+      - "19007:8000"
     environment:
       DB_HOST: postgres-clothes
       DB_NAME: clothes_db
@@ -200,7 +200,7 @@ services:
     container_name: cart-service
     restart: unless-stopped
     ports:
-      - "8006:8000"
+      - "19008:8000"
     environment:
       DB_HOST: postgres-cart
       DB_NAME: cart_db
@@ -219,7 +219,7 @@ services:
     container_name: api-gateway
     restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "19002:8000"
     environment:
       DJANGO_SETTINGS_MODULE: gateway.settings
       CUSTOMER_SERVICE_URL: http://customer-service:8000
@@ -228,6 +228,7 @@ services:
       DESKTOP_SERVICE_URL: http://desktop-service:8000
       CLOTHES_SERVICE_URL: http://clothes-service:8000
       CART_SERVICE_URL: http://cart-service:8000
+      AI_SERVICE_URL: http://ai-service:8000
     depends_on:
       - customer-service
       - staff-service
@@ -236,14 +237,26 @@ services:
       - clothes-service
       - cart-service
 
+  ai-service:
+    build: ./ai-service
+    container_name: ai-service
+    restart: unless-stopped
+    ports:
+      - "19009:8000"
+    environment:
+      DJANGO_SETTINGS_MODULE: app.settings
+      PRODUCT_CATALOG_URL: http://api-gateway:8000/api/products
+    depends_on:
+      - api-gateway
+
   frontend:
     build: ./frontend
     container_name: frontend
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "19001:3000"
     environment:
-      REACT_APP_API_URL: http://localhost:8000
+      REACT_APP_API_URL: http://localhost:19002
     depends_on:
       - api-gateway
 

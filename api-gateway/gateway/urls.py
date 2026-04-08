@@ -43,4 +43,9 @@ urlpatterns = [
     path('api/orders', views.customer_orders),
     path('api/admin/orders', views.admin_orders),
     path('api/admin/orders/<int:order_id>', views.update_order_status),
+
+    # AI
+    path('api/ai/chat', views.ai_chat),
+    path('api/ai/events', views.ai_track_event),
+    path('api/ai/recommendations', views.ai_recommendations),
 ]

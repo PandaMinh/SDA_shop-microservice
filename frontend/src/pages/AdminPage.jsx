@@ -179,6 +179,21 @@ export default function AdminPage() {
   const [editProduct, setEditProduct] = useState(null);
   const [importProduct, setImportProduct] = useState(null);
   const [statusFilter, setStatusFilter] = useState('all');
+  const [recommendations, setRecommendations] = useState([]);
+
+  useEffect(() => {
+    const fetchRecommendations = async () => {
+      try {
+        const res = await api.get('/api/ai/recommendations');
+        setRecommendations(res.data.products || []);
+      } catch {
+        setRecommendations([]);
+      }
+    };
+    if (activeTab === 'orders') {
+      fetchRecommendations();
+    }
+  }, [activeTab]);
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -229,6 +244,7 @@ export default function AdminPage() {
       <div className="tabs">
         <button className={`tab ${activeTab === 'products' ? 'active' : ''}`} onClick={() => setActiveTab('products')}>📦 Sản Phẩm</button>
         <button className={`tab ${activeTab === 'orders' ? 'active' : ''}`} onClick={() => setActiveTab('orders')}>📋 Đơn Hàng</button>
+        <button className={`tab ${activeTab === 'recommendations' ? 'active' : ''}`} onClick={() => setActiveTab('recommendations')}>✨ Đề Xuất</button>
       </div>
 
       {/* Products Tab */}
@@ -291,6 +307,28 @@ export default function AdminPage() {
               </tbody>
             </table>
           </div>
+        </div>
+      )}
+
+      {activeTab === 'recommendations' && (
+        <div>
+          <div className="page-header" style={{ paddingTop: 0 }}>
+            <h2 className="page-title" style={{ fontSize: 24 }}>Đề xuất sản phẩm</h2>
+            <p className="page-subtitle">Hiển thị các sản phẩm được AI xếp hạng theo tương tác người dùng</p>
+          </div>
+          {recommendations.length === 0 ? (
+            <div className="card">Chưa có dữ liệu tương tác để tạo đề xuất.</div>
+          ) : (
+            <div className="product-grid">
+              {recommendations.map(product => (
+                <div key={`${product.type || 'mix'}-${product.id}`} className="card">
+                  <div style={{ fontWeight: 700, marginBottom: 8 }}>{product.name}</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: 13 }}>{product.brand}</div>
+                  <div style={{ marginTop: 8, fontFamily: 'var(--font-mono)' }}>{formatPrice(product.price)}</div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
 

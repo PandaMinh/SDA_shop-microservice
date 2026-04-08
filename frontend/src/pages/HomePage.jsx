@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import api from '../api';
 import ProductCard from '../components/ProductCard';
+import RecommendationPanel from '../components/RecommendationPanel';
+import { useAuth } from '../context/AuthContext';
 
 const CATEGORIES = [
   { key: 'all', label: '✦ Tất Cả', type: null, cat: null },
@@ -13,6 +15,7 @@ const CATEGORIES = [
 ];
 
 export default function HomePage() {
+  const { user } = useAuth();
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -33,6 +36,19 @@ export default function HomePage() {
     };
     fetchProducts();
   }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!search.trim() || !user?.customer_id) return;
+      api.post('/api/ai/events', {
+        customer_id: user.customer_id,
+        event_type: 'search',
+        query: search,
+        metadata: { category: activeCategory },
+      }).catch(() => {});
+    }, 400);
+    return () => clearTimeout(timer);
+  }, [search, activeCategory, user]);
 
   useEffect(() => {
     let result = products;
@@ -138,6 +154,8 @@ export default function HomePage() {
             ))}
           </div>
         )}
+
+        <RecommendationPanel />
       </div>
     </div>
   );

@@ -12,6 +12,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import AdminPage from './pages/AdminPage';
 import OrdersPage from './pages/OrdersPage';
+import AIChatBubble from './components/AIChatBubble';
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
               <Route path="/orders" element={<ProtectedRoute><OrdersPage /></ProtectedRoute>} />
               <Route path="/admin" element={<ProtectedRoute adminOnly><AdminPage /></ProtectedRoute>} />
             </Routes>
+            <AIChatBubble />
             <footer style={{ borderTop: '1px solid var(--border-subtle)', marginTop: 80, padding: '32px 0', textAlign: 'center', color: 'var(--text-muted)', fontSize: 13 }}>
               <p>© 2025 TechStore — Điện thoại & Laptop Cao Cấp</p>
             </footer>

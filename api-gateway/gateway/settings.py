@@ -83,3 +83,4 @@ MOBILE_SERVICE = os.environ.get('MOBILE_SERVICE_URL', 'http://mobile-service:800
 DESKTOP_SERVICE = os.environ.get('DESKTOP_SERVICE_URL', 'http://desktop-service:8000')
 CART_SERVICE = os.environ.get('CART_SERVICE_URL', 'http://cart-service:8000')
 CLOTHES_SERVICE = os.environ.get('CLOTHES_SERVICE_URL', 'http://clothes-service:8000')
+AI_SERVICE = os.environ.get('AI_SERVICE_URL', 'http://ai-service:8000')

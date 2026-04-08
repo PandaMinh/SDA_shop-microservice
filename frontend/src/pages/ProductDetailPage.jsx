@@ -18,6 +18,7 @@ export default function ProductDetailPage() {
   const [added, setAdded] = useState(false);
   const [error, setError] = useState('');
   const [specsOpen, setSpecsOpen] = useState(true);
+  const [favorite, setFavorite] = useState(false);
 
   useEffect(() => {
     const fetch = async () => {
@@ -34,6 +35,18 @@ export default function ProductDetailPage() {
     fetch();
   }, [type, id]);
 
+  useEffect(() => {
+    if (!user?.customer_id || !product) return;
+    api.post('/api/ai/events', {
+      customer_id: user.customer_id,
+      event_type: 'view',
+      product_id: product.id,
+      product_type: type,
+      product_name: product.name,
+      metadata: { brand: product.brand, category: product.category },
+    }).catch(() => {});
+  }, [user, product, type]);
+
   const handleAddToCart = async () => {
     if (!user) { navigate('/login'); return; }
     setAdding(true);
@@ -45,6 +58,21 @@ export default function ProductDetailPage() {
       navigate('/login');
     } finally {
       setAdding(false);
+    }
+  };
+
+  const handleFavorite = () => {
+    const next = !favorite;
+    setFavorite(next);
+    if (user?.customer_id && product) {
+      api.post('/api/ai/events', {
+        customer_id: user.customer_id,
+        event_type: 'favorite',
+        product_id: product.id,
+        product_type: type,
+        product_name: product.name,
+        metadata: { brand: product.brand, category: product.category, favorite: next },
+      }).catch(() => {});
     }
   };
 
@@ -158,6 +186,14 @@ export default function ProductDetailPage() {
               : added ? '✓ Đã thêm vào giỏ hàng!'
               : product.stock === 0 ? 'Hết hàng'
               : `🛒 Thêm ${quantity > 1 ? quantity + ' sản phẩm' : ''} vào giỏ hàng`}
+          </button>
+
+          <button
+            className="btn btn-secondary"
+            style={{ width: '100%', height: 52, fontSize: 16, marginTop: 12 }}
+            onClick={handleFavorite}
+          >
+            {favorite ? '♥ Đã yêu thích' : '♡ Thêm vào yêu thích'}
           </button>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import api from '../api';
 
 const formatPrice = (price) => {
   return new Intl.NumberFormat('vi-VN').format(price) + ' đ';
@@ -13,6 +14,7 @@ export default function ProductCard({ product }) {
   const { user, isAdmin } = useAuth();
   const [adding, setAdding] = useState(false);
   const [added, setAdded] = useState(false);
+  const [favorite, setFavorite] = useState(false);
 
   const stockStatus = () => {
     if (product.stock === 0) return { text: 'Hết hàng', color: 'var(--danger)' };
@@ -33,12 +35,38 @@ export default function ProductCard({ product }) {
     setAdding(true);
     try {
       await addToCart(product.id, productType, 1);
+      if (user?.customer_id) {
+        api.post('/api/ai/events', {
+          customer_id: user.customer_id,
+          event_type: 'cart',
+          product_id: product.id,
+          product_type: productType,
+          product_name: product.name,
+          metadata: { brand: product.brand, category: product.category },
+        }).catch(() => {});
+      }
       setAdded(true);
       setTimeout(() => setAdded(false), 2000);
     } catch (e) {
       navigate('/login');
     } finally {
       setAdding(false);
+    }
+  };
+
+  const toggleFavorite = (e) => {
+    e.stopPropagation();
+    const next = !favorite;
+    setFavorite(next);
+    if (user?.customer_id) {
+      api.post('/api/ai/events', {
+        customer_id: user.customer_id,
+        event_type: 'favorite',
+        product_id: product.id,
+        product_type: productType,
+        product_name: product.name,
+        metadata: { brand: product.brand, category: product.category, favorite: next },
+      }).catch(() => {});
     }
   };
 
@@ -93,6 +121,14 @@ export default function ProductCard({ product }) {
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 18, fontWeight: 700, color: 'var(--accent-primary)', marginTop: 'auto' }}>
           {formatPrice(product.price)}
         </div>
+
+        <button
+          className="btn btn-secondary btn-sm"
+          style={{ width: '100%', marginTop: 4, fontSize: 13, padding: '10px' }}
+          onClick={toggleFavorite}
+        >
+          {favorite ? '♥ Đã yêu thích' : '♡ Yêu thích'}
+        </button>
 
         <button
           className={`btn btn-primary`}

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Django / local runtime
+db.sqlite3
+*.log
+
+# Node / frontend
+node_modules/
+frontend/build/
+frontend/.cache/
+frontend/.env.local
+
+# Environment
+.env.local
+.env.*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.env
+.env.*
+# keep sample env files if you add them later

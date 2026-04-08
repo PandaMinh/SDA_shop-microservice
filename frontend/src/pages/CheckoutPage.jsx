@@ -40,6 +40,14 @@ export default function CheckoutPage() {
         items: items,
       });
       setSuccess(res.data);
+      if (user?.customer_id) {
+        api.post('/api/ai/events', {
+          customer_id: user.customer_id,
+          event_type: 'buy',
+          product_name: 'checkout',
+          metadata: { total_amount: total, item_count: items.length },
+        }).catch(() => {});
+      }
       await fetchCart();
     } catch (err) {
       setError(err.response?.data?.error || 'Đặt hàng thất bại. Vui lòng thử lại.');

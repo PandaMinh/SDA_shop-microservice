@@ -11,6 +11,7 @@ MOBILE_SERVICE = settings.MOBILE_SERVICE
 DESKTOP_SERVICE = settings.DESKTOP_SERVICE
 CART_SERVICE = getattr(settings, 'CART_SERVICE', 'http://cart-service:8000')
 CLOTHES_SERVICE = getattr(settings, 'CLOTHES_SERVICE', 'http://clothes-service:8000')
+AI_SERVICE = getattr(settings, 'AI_SERVICE', 'http://ai-service:8000')
 
 REQUEST_TIMEOUT = 10
 
@@ -424,6 +425,40 @@ def update_order_status(request, order_id):
             f"{CUSTOMER_SERVICE}/orders/{order_id}/status/",
             json=request.data,
             timeout=REQUEST_TIMEOUT
+        )
+        return Response(r.json(), status=r.status_code)
+    except requests.RequestException as e:
+        return Response({'error': str(e)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+
+
+# ─── AI ──────────────────────────────────────────────────────────────────────
+
+@api_view(['POST'])
+def ai_chat(request):
+    try:
+        r = requests.post(f"{AI_SERVICE}/chat/", json=request.data, timeout=REQUEST_TIMEOUT)
+        return Response(r.json(), status=r.status_code)
+    except requests.RequestException as e:
+        return Response({'error': str(e)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+
+
+@api_view(['POST'])
+def ai_track_event(request):
+    try:
+        r = requests.post(f"{AI_SERVICE}/events/", json=request.data, timeout=REQUEST_TIMEOUT)
+        return Response(r.json(), status=r.status_code)
+    except requests.RequestException as e:
+        return Response({'error': str(e)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+
+
+@api_view(['GET'])
+def ai_recommendations(request):
+    try:
+        customer_id = request.GET.get('customer_id')
+        r = requests.get(
+            f"{AI_SERVICE}/recommendations/",
+            params={'customer_id': customer_id},
+            timeout=REQUEST_TIMEOUT,
         )
         return Response(r.json(), status=r.status_code)
     except requests.RequestException as e:
