@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="360">
+<rect width="100%" height="100%" fill="#ffffff" rx="18" />
+<text x="40" y="36" font-size="22" font-weight="700" fill="#0f172a">So sanh 3 mo hinh sequence</text>
+<text x="40" y="60" font-size="13" fill="#475569">Gia tri cot la F1-macro tren tap test</text>
+<line x1="90" y1="290" x2="670" y2="290" stroke="#e2e8f0" stroke-width="1" /><line x1="90" y1="245" x2="670" y2="245" stroke="#e2e8f0" stroke-width="1" /><line x1="90" y1="200" x2="670" y2="200" stroke="#e2e8f0" stroke-width="1" /><line x1="90" y1="155" x2="670" y2="155" stroke="#e2e8f0" stroke-width="1" /><line x1="90" y1="110" x2="670" y2="110" stroke="#e2e8f0" stroke-width="1" />
+<text x="80" y="294" font-size="11" text-anchor="end" fill="#64748b">0.00</text><text x="80" y="249" font-size="11" text-anchor="end" fill="#64748b">0.25</text><text x="80" y="204" font-size="11" text-anchor="end" fill="#64748b">0.50</text><text x="80" y="159" font-size="11" text-anchor="end" fill="#64748b">0.75</text><text x="80" y="114" font-size="11" text-anchor="end" fill="#64748b">1.00</text>
+<line x1="90" y1="290" x2="670" y2="290" stroke="#94a3b8" stroke-width="1.5" />
+<rect x="120" y="171.92" width="110" height="118.08" rx="16" fill="#2563eb" /><text x="175.0" y="161.92" font-size="14" text-anchor="middle" fill="#0f172a">0.656</text><rect x="320" y="139.86" width="110" height="150.14" rx="16" fill="#0f766e" /><text x="375.0" y="129.86" font-size="14" text-anchor="middle" fill="#0f172a">0.834</text><rect x="520" y="141.77" width="110" height="148.23" rx="16" fill="#7c3aed" /><text x="575.0" y="131.77" font-size="14" text-anchor="middle" fill="#0f172a">0.824</text>
+<text x="175.0" y="318" font-size="13" text-anchor="middle" fill="#334155">RNN</text><text x="375.0" y="318" font-size="13" text-anchor="middle" fill="#334155">LSTM</text><text x="575.0" y="318" font-size="13" text-anchor="middle" fill="#334155">BiLSTM</text>
+</svg>

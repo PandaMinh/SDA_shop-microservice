@@ -17,9 +17,7 @@ except ModuleNotFoundError:  # pragma: no cover - dependency may be absent in lo
     class SystemMessage:  # type: ignore[no-redef]
         content: str
 
-    HumanMessage = Any  # type: ignore[assignment]
-    SystemMessage = Any  # type: ignore[assignment]
-
+from app.assignment import AssignmentPipelineService
 from app.models import InteractionEvent
 
 
@@ -27,6 +25,8 @@ class RecommendationEngine:
     WEIGHTS = {
         "search": 1.0,
         "view": 2.0,
+        "click": 2.5,
+        "add_to_cart": 3.4,
         "cart": 3.0,
         "favorite": 4.0,
         "buy": 5.0,
@@ -36,24 +36,42 @@ class RecommendationEngine:
         self,
         customer_id: int,
         products: list[dict[str, Any]],
+        query: str = "",
+        signal: str = "",
     ) -> list[dict[str, Any]]:
         events = InteractionEvent.objects.filter(customer_id=customer_id)
         keyword_counter = Counter()
         product_scores: dict[int, float] = defaultdict(float)
+        history_actions: list[str] = []
+        history_categories: list[str] = []
         now = self._latest_event_time(events)
         for event in events:
-            weight = self._time_weight(event, now) * self.WEIGHTS.get(event.event_type, 0.0)
+            event_type = self._normalize_event_type(event.event_type)
+            weight = self._time_weight(event, now) * self.WEIGHTS.get(event_type, 0.0)
             for token in self._tokens_from_event(event):
                 keyword_counter[token] += weight
             if event.product_id is not None:
                 product_scores[event.product_id] += weight
+            history_actions.append(event_type)
+            history_categories.append(str(event.metadata.get("category", "")))
+
+        if query:
+            for token in self._tokenize(query):
+                keyword_counter[token] += 2.4
+
+        pipeline = AssignmentPipelineService()
+        pipeline.ensure_assets(products)
+        intent_scores = pipeline.score_products_for_user(history_actions[::-1], history_categories[::-1], products)
 
         for product in products:
             tokens = self._tokens_from_product(product)
             relevance = sum(keyword_counter[token] for token in tokens)
             popularity = product_scores.get(int(product["id"]), 0.0)
             stock_boost = 1.0 if int(product.get("stock", 0)) > 0 else -2.0
-            product["score"] = round(relevance + popularity + stock_boost, 3)
+            intent = intent_scores.get(int(product["id"]), 0.0) * 5
+            signal_boost = 1.2 if signal in {"search", "add_to_cart", "cart"} else 0.0
+            product["score"] = round(relevance + popularity + stock_boost + intent + signal_boost, 3)
+            product["ai_reason"] = self._reason_text(relevance, popularity, intent, query, signal)
 
         ranked = sorted(
             products,
@@ -67,7 +85,7 @@ class RecommendationEngine:
         events = InteractionEvent.objects.all()
         now = self._latest_event_time(events)
         for event in events:
-            weight = self._time_weight(event, now) * self.WEIGHTS.get(event.event_type, 0.0)
+            weight = self._time_weight(event, now) * self.WEIGHTS.get(self._normalize_event_type(event.event_type), 0.0)
             if event.product_id is not None:
                 popularity[event.product_id] += weight
 
@@ -106,6 +124,7 @@ class RecommendationEngine:
                 event.query,
                 event.product_name,
                 event.product_type,
+                self._normalize_event_type(event.event_type),
                 str(event.metadata.get("category", "")),
                 str(event.metadata.get("brand", "")),
             ]
@@ -125,6 +144,20 @@ class RecommendationEngine:
 
     def _tokenize(self, text: str) -> list[str]:
         return [token for token in text.lower().replace("/", " ").split() if len(token) > 2]
+
+    def _normalize_event_type(self, event_type: str) -> str:
+        if event_type == "cart":
+            return "add_to_cart"
+        return event_type
+
+    def _reason_text(self, relevance: float, popularity: float, intent: float, query: str, signal: str) -> str:
+        if query and relevance > popularity:
+            return "Phu hop voi tu khoa tim kiem gan day."
+        if signal in {"add_to_cart", "cart"} and intent >= 1.5:
+            return "Model_best du doan kha nang them vao gio cao."
+        if popularity > 1.5:
+            return "Duoc uu tien tu lich su tuong tac cua ban."
+        return "Dang con hang va co diem goi y on dinh."
 
 
 class ChatRAGService:
@@ -157,22 +190,28 @@ class ChatRAGService:
         customer_id: int | None,
         products: list[dict[str, Any]],
     ) -> dict[str, Any]:
+        pipeline = AssignmentPipelineService()
+        pipeline.ensure_assets(products)
         filters = self._extract_filters(message)
         matches = self._retrieve(message, products, filters)
+        graph_context = pipeline.graph_context(message, customer_id, products)
         if not matches:
             return {
                 "answer": self._fallback_answer(message),
                 "sources": [],
+                "graph_facts": graph_context["facts"],
             }
 
         top = matches[:6]
-        context = self._format_context(top)
+        context = self._format_context(top, graph_context)
         answer = self._invoke_llm(message, context, filters)
         if not answer:
-            answer = self._fallback_answer(message)
+            answer = self._graph_fallback_answer(top, graph_context)
         return {
             "answer": answer,
             "sources": top,
+            "graph_facts": graph_context["facts"],
+            "best_model": graph_context.get("best_model"),
         }
 
     def _invoke_llm(self, message: str, context: str, filters: dict[str, Any]) -> str:
@@ -197,8 +236,10 @@ class ChatRAGService:
             ),
         ]
 
-    def _format_context(self, products: list[dict[str, Any]]) -> str:
+    def _format_context(self, products: list[dict[str, Any]], graph_context: dict[str, Any]) -> str:
         lines: list[str] = []
+        if graph_context.get("facts"):
+            lines.append("Graph facts: " + " || ".join(graph_context["facts"]))
         for item in products:
             lines.append(
                 " | ".join(
@@ -220,6 +261,18 @@ class ChatRAGService:
             "Mình chưa tìm thấy sản phẩm phù hợp ngay lúc này. "
             "Bạn có thể nói rõ hơn về loại sản phẩm, hãng, hoặc mức giá mong muốn."
         )
+
+    def _graph_fallback_answer(self, products: list[dict[str, Any]], graph_context: dict[str, Any]) -> str:
+        if not products:
+            return self._fallback_answer("")
+        lines = ["Mình gợi ý nhanh từ KB_Graph và catalog hiện có:"]
+        for item in products[:3]:
+            lines.append(
+                f"- {item.get('name')} ({item.get('brand')}) - {item.get('price')} đ, danh mục {item.get('category')}"
+            )
+        if graph_context.get("facts"):
+            lines.append("Dấu vết graph nổi bật: " + "; ".join(graph_context["facts"][:2]))
+        return "\n".join(lines)
 
     def _retrieve(
         self,

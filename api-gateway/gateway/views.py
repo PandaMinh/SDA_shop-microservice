@@ -380,6 +380,28 @@ def checkout(request):
             'customer_id': customer_id,
         }
         r = requests.post(f"{CUSTOMER_SERVICE}/orders/", json=payload, timeout=REQUEST_TIMEOUT)
+        if r.status_code in (200, 201):
+            try:
+                requests.delete(f"{CART_SERVICE}/carts/{customer_id}/clear/", timeout=REQUEST_TIMEOUT)
+            except requests.RequestException:
+                pass
+        return Response(r.json(), status=r.status_code)
+    except requests.RequestException as e:
+        return Response({'error': str(e)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+
+
+@api_view(['POST'])
+def create_review(request, order_id):
+    customer_id = _get_customer_id(request)
+    if not customer_id:
+        return Response({'error': 'Vui lòng đăng nhập'}, status=status.HTTP_401_UNAUTHORIZED)
+    try:
+        payload = {**request.data, 'customer_id': customer_id}
+        r = requests.post(
+            f"{CUSTOMER_SERVICE}/orders/{order_id}/reviews/",
+            json=payload,
+            timeout=REQUEST_TIMEOUT,
+        )
         return Response(r.json(), status=r.status_code)
     except requests.RequestException as e:
         return Response({'error': str(e)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
@@ -457,9 +479,21 @@ def ai_recommendations(request):
         customer_id = request.GET.get('customer_id')
         r = requests.get(
             f"{AI_SERVICE}/recommendations/",
-            params={'customer_id': customer_id},
+            params={'customer_id': customer_id, 'query': request.GET.get('query', ''), 'signal': request.GET.get('signal', '')},
             timeout=REQUEST_TIMEOUT,
         )
+        return Response(r.json(), status=r.status_code)
+    except requests.RequestException as e:
+        return Response({'error': str(e)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+
+
+@api_view(['GET', 'POST'])
+def ai_assignment_summary(request):
+    try:
+        if request.method == 'GET':
+            r = requests.get(f"{AI_SERVICE}/assignment-summary/", timeout=REQUEST_TIMEOUT)
+        else:
+            r = requests.post(f"{AI_SERVICE}/assignment-summary/", timeout=REQUEST_TIMEOUT)
         return Response(r.json(), status=r.status_code)
     except requests.RequestException as e:
         return Response({'error': str(e)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)

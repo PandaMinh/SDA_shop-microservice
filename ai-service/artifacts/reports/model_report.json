@@ -1,0 +1,201 @@
+{
+  "dataset": {
+    "rows": 4000,
+    "train_rows": 3200,
+    "test_rows": 800
+  },
+  "models": [
+    {
+      "name": "RNN",
+      "metrics": {
+        "accuracy": 0.6538,
+        "precision_macro": 0.7403,
+        "recall_macro": 0.6376,
+        "f1_macro": 0.656,
+        "support": 800
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "accuracy": 0.61,
+          "f1_macro": 0.6151
+        },
+        {
+          "epoch": 2,
+          "accuracy": 0.6175,
+          "f1_macro": 0.6259
+        },
+        {
+          "epoch": 3,
+          "accuracy": 0.6412,
+          "f1_macro": 0.6458
+        },
+        {
+          "epoch": 4,
+          "accuracy": 0.6538,
+          "f1_macro": 0.656
+        },
+        {
+          "epoch": 5,
+          "accuracy": 0.6538,
+          "f1_macro": 0.656
+        },
+        {
+          "epoch": 6,
+          "accuracy": 0.6538,
+          "f1_macro": 0.656
+        }
+      ],
+      "confusion_matrix": [
+        [
+          100,
+          36,
+          64
+        ],
+        [
+          0,
+          198,
+          109
+        ],
+        [
+          0,
+          68,
+          225
+        ]
+      ],
+      "plots": {
+        "history": "artifacts\\reports\\plots\\rnn_history.svg",
+        "confusion": "artifacts\\reports\\plots\\rnn_confusion.svg"
+      }
+    },
+    {
+      "name": "LSTM",
+      "metrics": {
+        "accuracy": 0.82,
+        "precision_macro": 0.8519,
+        "recall_macro": 0.8396,
+        "f1_macro": 0.8341,
+        "support": 800
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "accuracy": 0.76,
+          "f1_macro": 0.7791
+        },
+        {
+          "epoch": 2,
+          "accuracy": 0.7913,
+          "f1_macro": 0.8073
+        },
+        {
+          "epoch": 3,
+          "accuracy": 0.8037,
+          "f1_macro": 0.8173
+        },
+        {
+          "epoch": 4,
+          "accuracy": 0.8113,
+          "f1_macro": 0.827
+        },
+        {
+          "epoch": 5,
+          "accuracy": 0.815,
+          "f1_macro": 0.8303
+        },
+        {
+          "epoch": 6,
+          "accuracy": 0.82,
+          "f1_macro": 0.8341
+        }
+      ],
+      "confusion_matrix": [
+        [
+          195,
+          5,
+          0
+        ],
+        [
+          5,
+          191,
+          111
+        ],
+        [
+          0,
+          23,
+          270
+        ]
+      ],
+      "plots": {
+        "history": "artifacts\\reports\\plots\\lstm_history.svg",
+        "confusion": "artifacts\\reports\\plots\\lstm_confusion.svg"
+      }
+    },
+    {
+      "name": "BiLSTM",
+      "metrics": {
+        "accuracy": 0.8113,
+        "precision_macro": 0.843,
+        "recall_macro": 0.832,
+        "f1_macro": 0.8235,
+        "support": 800
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "accuracy": 0.755,
+          "f1_macro": 0.7696
+        },
+        {
+          "epoch": 2,
+          "accuracy": 0.7887,
+          "f1_macro": 0.8034
+        },
+        {
+          "epoch": 3,
+          "accuracy": 0.7963,
+          "f1_macro": 0.8072
+        },
+        {
+          "epoch": 4,
+          "accuracy": 0.8037,
+          "f1_macro": 0.8143
+        },
+        {
+          "epoch": 5,
+          "accuracy": 0.8137,
+          "f1_macro": 0.8244
+        },
+        {
+          "epoch": 6,
+          "accuracy": 0.8113,
+          "f1_macro": 0.8235
+        }
+      ],
+      "confusion_matrix": [
+        [
+          195,
+          5,
+          0
+        ],
+        [
+          9,
+          183,
+          115
+        ],
+        [
+          1,
+          21,
+          271
+        ]
+      ],
+      "plots": {
+        "history": "artifacts\\reports\\plots\\bilstm_history.svg",
+        "confusion": "artifacts\\reports\\plots\\bilstm_confusion.svg"
+      }
+    }
+  ],
+  "best_model": "LSTM",
+  "comparison_plot": "artifacts\\reports\\plots\\model_comparison.svg",
+  "evaluation_note": "Mo hinh LSTM dat F1-macro 0.834, cao nhat tren tap test nen duoc chon lam model_best."
+}

@@ -6,9 +6,11 @@ class Command(BaseCommand):
     help = 'Seed desktop products data'
 
     def handle(self, *args, **options):
-        if DesktopProduct.objects.exists():
-            self.stdout.write('Desktop products already seeded.')
-            return
+        target_per_category = 10
+        counts = {
+            'laptop': DesktopProduct.objects.filter(category='laptop').count(),
+            'pc': DesktopProduct.objects.filter(category='pc').count(),
+        }
 
         products = [
             {
@@ -132,8 +134,41 @@ class Command(BaseCommand):
             },
         ]
 
-        for product_data in products:
+        to_create = []
+        for category in ['laptop', 'pc']:
+            count = counts[category]
+            if count >= target_per_category:
+                continue
+
+            base = [p for p in products if p['category'] == category]
+            for p in base:
+                if count >= target_per_category:
+                    break
+                to_create.append(p)
+                count += 1
+
+            for i in range(target_per_category - count):
+                idx = count + i + 1
+                to_create.append({
+                    'name': f'{category.title()} Sample {idx}',
+                    'brand': 'TechStore',
+                    'category': category,
+                    'price': 15990000 + (idx * 250000),
+                    'stock': 12 + (idx % 8),
+                    'description': 'Sản phẩm mẫu bổ sung để đủ 10 sản phẩm cho từng loại.',
+                    'image_url': f'https://picsum.photos/400/400?random=80{category[:1]}{idx}',
+                    'specs': {
+                        'cpu': 'Intel Core Ultra 5',
+                        'ram': '16GB',
+                        'storage': '512GB SSD',
+                        'gpu': 'Integrated',
+                        'display': '15.6"',
+                        'battery': 'N/A',
+                    }
+                })
+
+        for product_data in to_create:
             DesktopProduct.objects.create(**product_data)
             self.stdout.write(f'Created: {product_data["name"]}')
 
-        self.stdout.write(self.style.SUCCESS('Desktop products seeded successfully!'))
+        self.stdout.write(self.style.SUCCESS(f'Seeded {len(to_create)} desktop products.'))

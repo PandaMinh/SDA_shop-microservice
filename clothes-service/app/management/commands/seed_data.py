@@ -6,9 +6,11 @@ class Command(BaseCommand):
     help = 'Seed clothes products sample data'
 
     def handle(self, *args, **options):
-        if ClothesProduct.objects.exists():
-            self.stdout.write('Clothes data already seeded.')
-            return
+        target_per_category = 10
+        counts = {
+            'ao': ClothesProduct.objects.filter(category='ao').count(),
+            'quan': ClothesProduct.objects.filter(category='quan').count(),
+        }
 
         products = [
             {
@@ -93,8 +95,34 @@ class Command(BaseCommand):
             },
         ]
 
-        for p in products:
+        to_create = []
+        for category in ['ao', 'quan']:
+            count = counts[category]
+            if count >= target_per_category:
+                continue
+
+            base = [p for p in products if p['category'] == category]
+            for p in base:
+                if count >= target_per_category:
+                    break
+                to_create.append(p)
+                count += 1
+
+            for i in range(target_per_category - count):
+                idx = count + i + 1
+                to_create.append({
+                    'name': f'{"Ao" if category == "ao" else "Quan"} mau {idx}',
+                    'brand': 'TechStore',
+                    'category': category,
+                    'price': 199000 + (idx * 25000),
+                    'stock': 25 + (idx % 15),
+                    'description': 'Sản phẩm mẫu bổ sung để đủ 10 sản phẩm cho từng loại.',
+                    'image_url': f'https://picsum.photos/400/400?random=70{category[:1]}{idx}',
+                    'specs': {'material': 'Polyester', 'sizes': 'S,M,L', 'colors': 'Đen, Trắng'},
+                })
+
+        for p in to_create:
             ClothesProduct.objects.create(**p)
             self.stdout.write(f'  ✓ {p["name"]}')
 
-        self.stdout.write(self.style.SUCCESS(f'Seeded {len(products)} clothes products.'))
+        self.stdout.write(self.style.SUCCESS(f'Seeded {len(to_create)} clothes products.'))

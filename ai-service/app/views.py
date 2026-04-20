@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from app.serializers import InteractionEventSerializer
+from app.assignment import AssignmentPipelineService
 from app.services import ChatRAGService, RecommendationEngine
 
 REQUEST_TIMEOUT = 10
@@ -44,15 +45,25 @@ def chat(request):
 @api_view(["GET"])
 def recommendations(request):
     customer_id = request.query_params.get("customer_id")
+    query = str(request.query_params.get("query", "")).strip()
+    signal = str(request.query_params.get("signal", "")).strip()
 
     products = _fetch_products()
     engine = RecommendationEngine()
     if customer_id:
-        ranked = engine.score_products(int(customer_id), products)
-        return Response({"customer_id": int(customer_id), "products": ranked})
+        ranked = engine.score_products(int(customer_id), products, query=query, signal=signal)
+        return Response({"customer_id": int(customer_id), "query": query, "signal": signal, "products": ranked})
 
     ranked = engine.score_popular_products(products)
-    return Response({"customer_id": None, "products": ranked})
+    return Response({"customer_id": None, "query": query, "signal": signal, "products": ranked})
+
+
+@api_view(["GET", "POST"])
+def assignment_summary(request):
+    products = _fetch_products()
+    service = AssignmentPipelineService()
+    summary = service.ensure_assets(products, force=(request.method == "POST"))
+    return Response(summary)
 
 
 def _fetch_products() -> list[dict[str, Any]]:

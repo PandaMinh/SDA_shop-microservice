@@ -12,6 +12,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import AdminPage from './pages/AdminPage';
 import OrdersPage from './pages/OrdersPage';
+import FavoritesPage from './pages/FavoritesPage';
 import AIChatBubble from './components/AIChatBubble';
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
               <Route path="/cart" element={<ProtectedRoute><CartPage /></ProtectedRoute>} />
               <Route path="/checkout" element={<ProtectedRoute><CheckoutPage /></ProtectedRoute>} />
               <Route path="/orders" element={<ProtectedRoute><OrdersPage /></ProtectedRoute>} />
+              <Route path="/favorites" element={<ProtectedRoute><FavoritesPage /></ProtectedRoute>} />
               <Route path="/admin" element={<ProtectedRoute adminOnly><AdminPage /></ProtectedRoute>} />
             </Routes>
             <AIChatBubble />

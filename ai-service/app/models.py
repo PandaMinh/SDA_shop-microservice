@@ -5,6 +5,8 @@ class InteractionEvent(models.Model):
     EVENT_TYPES = [
         ("search", "Search"),
         ("view", "View"),
+        ("click", "Click"),
+        ("add_to_cart", "Add to Cart"),
         ("buy", "Buy"),
         ("cart", "Cart"),
         ("favorite", "Favorite"),

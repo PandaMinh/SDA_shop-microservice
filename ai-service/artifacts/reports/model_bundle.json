@@ -1,0 +1,4778 @@
+{
+  "best_model": "LSTM",
+  "models": {
+    "RNN": {
+      "name": "RNN",
+      "counts": {
+        "rnn:last=start|cat=tablet": {
+          "view": 62
+        },
+        "rnn:cat=tablet": {
+          "view": 131,
+          "click": 214,
+          "add_to_cart": 181
+        },
+        "rnn:brand=Apple": {
+          "view": 117,
+          "click": 237,
+          "add_to_cart": 185
+        },
+        "rnn:last=view|cat=phone": {
+          "click": 125,
+          "add_to_cart": 5,
+          "view": 2
+        },
+        "rnn:cat=phone": {
+          "click": 229,
+          "add_to_cart": 173,
+          "view": 134
+        },
+        "rnn:brand=Samsung": {
+          "click": 206,
+          "add_to_cart": 169,
+          "view": 148
+        },
+        "rnn:last=click|cat=tablet": {
+          "view": 64,
+          "add_to_cart": 96,
+          "click": 57
+        },
+        "rnn:last=click|cat=phone": {
+          "add_to_cart": 76,
+          "click": 40,
+          "view": 63
+        },
+        "rnn:last=add_to_cart|cat=tablet": {
+          "click": 39,
+          "add_to_cart": 83
+        },
+        "rnn:last=add_to_cart|cat=phone": {
+          "add_to_cart": 92,
+          "click": 64
+        },
+        "rnn:last=start|cat=laptop": {
+          "view": 64
+        },
+        "rnn:cat=laptop": {
+          "view": 128,
+          "add_to_cart": 176,
+          "click": 207
+        },
+        "rnn:brand=Dell": {
+          "view": 65,
+          "add_to_cart": 85,
+          "click": 98
+        },
+        "rnn:last=view|cat=laptop": {
+          "view": 61,
+          "click": 72,
+          "add_to_cart": 2
+        },
+        "rnn:brand=Asus": {
+          "view": 63,
+          "add_to_cart": 91,
+          "click": 109
+        },
+        "rnn:last=view|cat=pc": {
+          "click": 71,
+          "view": 57,
+          "add_to_cart": 1
+        },
+        "rnn:cat=pc": {
+          "click": 234,
+          "add_to_cart": 165,
+          "view": 127
+        },
+        "rnn:brand=HP": {
+          "click": 126,
+          "view": 62,
+          "add_to_cart": 77
+        },
+        "rnn:last=click|cat=pc": {
+          "click": 112,
+          "add_to_cart": 87,
+          "view": 7
+        },
+        "rnn:brand=Lenovo": {
+          "click": 108,
+          "add_to_cart": 88,
+          "view": 65
+        },
+        "rnn:last=click|cat=laptop": {
+          "add_to_cart": 91,
+          "click": 89,
+          "view": 3
+        },
+        "rnn:last=add_to_cart|cat=laptop": {
+          "add_to_cart": 83,
+          "click": 46
+        },
+        "rnn:last=add_to_cart|cat=pc": {
+          "add_to_cart": 77,
+          "click": 51
+        },
+        "rnn:last=start|cat=shirt": {
+          "view": 66
+        },
+        "rnn:cat=shirt": {
+          "view": 134,
+          "add_to_cart": 211,
+          "click": 194
+        },
+        "rnn:brand=Nike": {
+          "view": 134,
+          "add_to_cart": 211,
+          "click": 194
+        },
+        "rnn:last=view|cat=pants": {
+          "click": 88,
+          "add_to_cart": 35,
+          "view": 4
+        },
+        "rnn:cat=pants": {
+          "click": 195,
+          "view": 146,
+          "add_to_cart": 221
+        },
+        "rnn:brand=Adidas": {
+          "click": 195,
+          "view": 146,
+          "add_to_cart": 221
+        },
+        "rnn:last=click|cat=shirt": {
+          "view": 64,
+          "add_to_cart": 70,
+          "click": 33
+        },
+        "rnn:last=add_to_cart|cat=shirt": {
+          "add_to_cart": 100,
+          "click": 54
+        },
+        "rnn:last=add_to_cart|cat=pants": {
+          "click": 61,
+          "add_to_cart": 111
+        },
+        "rnn:last=click|cat=pants": {
+          "click": 46,
+          "add_to_cart": 75,
+          "view": 66
+        },
+        "rnn:last=start|cat=phone": {
+          "view": 69
+        },
+        "rnn:last=view|cat=tablet": {
+          "click": 118,
+          "view": 5,
+          "add_to_cart": 2
+        },
+        "rnn:last=view|cat=shirt": {
+          "click": 107,
+          "add_to_cart": 41,
+          "view": 4
+        },
+        "rnn:last=start|cat=pants": {
+          "view": 76
+        },
+        "rnn:last=start|cat=pc": {
+          "view": 63
+        }
+      },
+      "global_counts": {
+        "view": 800,
+        "click": 1273,
+        "add_to_cart": 1127
+      }
+    },
+    "LSTM": {
+      "name": "LSTM",
+      "counts": {
+        "lstm:h3=start|cat=tablet|pref=unknown": {
+          "view": 62
+        },
+        "lstm:h2=start|cat=tablet": {
+          "view": 62
+        },
+        "lstm:pref=unknown|brand=Apple": {
+          "view": 61
+        },
+        "lstm:cat=tablet": {
+          "view": 131,
+          "click": 214,
+          "add_to_cart": 181
+        },
+        "lstm:h3=view|cat=phone|pref=tablet": {
+          "click": 25
+        },
+        "lstm:h2=view|cat=phone": {
+          "click": 54,
+          "view": 2
+        },
+        "lstm:pref=tablet|brand=Samsung": {
+          "click": 88,
+          "add_to_cart": 69,
+          "view": 25
+        },
+        "lstm:cat=phone": {
+          "click": 229,
+          "add_to_cart": 173,
+          "view": 134
+        },
+        "lstm:h3=view,click|cat=tablet|pref=phone": {
+          "view": 27
+        },
+        "lstm:h2=view,click|cat=tablet": {
+          "view": 64,
+          "add_to_cart": 49,
+          "click": 33
+        },
+        "lstm:pref=phone|brand=Apple": {
+          "view": 15,
+          "click": 93,
+          "add_to_cart": 77
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=tablet": {
+          "click": 27
+        },
+        "lstm:h2=click,view|cat=phone": {
+          "click": 66,
+          "add_to_cart": 5
+        },
+        "lstm:h3=click,view,click|cat=phone|pref=phone": {
+          "add_to_cart": 20,
+          "click": 8
+        },
+        "lstm:h2=view,click|cat=phone": {
+          "add_to_cart": 38,
+          "click": 17,
+          "view": 63
+        },
+        "lstm:pref=phone|brand=Samsung": {
+          "add_to_cart": 63,
+          "view": 32,
+          "click": 63
+        },
+        "lstm:h3=view,click,add_to_cart|cat=tablet|pref=phone": {
+          "click": 6,
+          "add_to_cart": 13
+        },
+        "lstm:h2=click,add_to_cart|cat=tablet": {
+          "click": 21,
+          "add_to_cart": 50
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=tablet": {
+          "add_to_cart": 4
+        },
+        "lstm:h2=add_to_cart,click|cat=phone": {
+          "add_to_cart": 13,
+          "click": 7
+        },
+        "lstm:pref=tablet|brand=Apple": {
+          "add_to_cart": 75,
+          "click": 83,
+          "view": 26
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=phone|pref=phone": {
+          "add_to_cart": 3,
+          "click": 1
+        },
+        "lstm:h2=click,add_to_cart|cat=phone": {
+          "add_to_cart": 52,
+          "click": 29
+        },
+        "lstm:h3=start|cat=laptop|pref=unknown": {
+          "view": 64
+        },
+        "lstm:h2=start|cat=laptop": {
+          "view": 64
+        },
+        "lstm:pref=unknown|brand=Dell": {
+          "view": 33
+        },
+        "lstm:cat=laptop": {
+          "view": 128,
+          "add_to_cart": 176,
+          "click": 207
+        },
+        "lstm:h3=view|cat=laptop|pref=laptop": {
+          "view": 25
+        },
+        "lstm:h2=view|cat=laptop": {
+          "view": 61,
+          "click": 12
+        },
+        "lstm:pref=laptop|brand=Asus": {
+          "view": 12,
+          "add_to_cart": 28,
+          "click": 35
+        },
+        "lstm:h3=view,view|cat=pc|pref=laptop": {
+          "click": 28
+        },
+        "lstm:h2=view,view|cat=pc": {
+          "click": 63
+        },
+        "lstm:pref=laptop|brand=HP": {
+          "click": 51,
+          "add_to_cart": 36,
+          "view": 12
+        },
+        "lstm:cat=pc": {
+          "click": 234,
+          "add_to_cart": 165,
+          "view": 127
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=pc": {
+          "click": 26
+        },
+        "lstm:h2=view,click|cat=pc": {
+          "click": 64,
+          "view": 7
+        },
+        "lstm:pref=pc|brand=Lenovo": {
+          "click": 46,
+          "view": 13,
+          "add_to_cart": 34
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=pc": {
+          "add_to_cart": 19,
+          "click": 6
+        },
+        "lstm:h2=click,click|cat=laptop": {
+          "add_to_cart": 69,
+          "click": 20
+        },
+        "lstm:pref=pc|brand=Asus": {
+          "add_to_cart": 47,
+          "click": 39,
+          "view": 10
+        },
+        "lstm:h3=click,click,add_to_cart|cat=laptop|pref=laptop": {
+          "add_to_cart": 21,
+          "click": 7
+        },
+        "lstm:h2=click,add_to_cart|cat=laptop": {
+          "add_to_cart": 45,
+          "click": 27
+        },
+        "lstm:pref=laptop|brand=Dell": {
+          "add_to_cart": 32,
+          "click": 35,
+          "view": 13
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pc|pref=laptop": {
+          "add_to_cart": 13,
+          "click": 4
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=pc": {
+          "add_to_cart": 36,
+          "click": 20
+        },
+        "lstm:pref=laptop|brand=Lenovo": {
+          "add_to_cart": 39,
+          "view": 13,
+          "click": 37
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=laptop|pref=pc": {
+          "add_to_cart": 6,
+          "click": 3
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=laptop": {
+          "add_to_cart": 35,
+          "click": 17
+        },
+        "lstm:h3=start|cat=shirt|pref=unknown": {
+          "view": 66
+        },
+        "lstm:h2=start|cat=shirt": {
+          "view": 66
+        },
+        "lstm:pref=unknown|brand=Nike": {
+          "view": 66
+        },
+        "lstm:cat=shirt": {
+          "view": 134,
+          "add_to_cart": 211,
+          "click": 194
+        },
+        "lstm:h3=view|cat=pants|pref=shirt": {
+          "click": 24
+        },
+        "lstm:h2=view|cat=pants": {
+          "click": 61,
+          "view": 4
+        },
+        "lstm:pref=shirt|brand=Adidas": {
+          "click": 68,
+          "add_to_cart": 78,
+          "view": 32
+        },
+        "lstm:cat=pants": {
+          "click": 195,
+          "view": 146,
+          "add_to_cart": 221
+        },
+        "lstm:h3=view,click|cat=shirt|pref=pants": {
+          "view": 25
+        },
+        "lstm:h2=view,click|cat=shirt": {
+          "view": 64,
+          "add_to_cart": 19,
+          "click": 12
+        },
+        "lstm:pref=pants|brand=Nike": {
+          "view": 25,
+          "click": 81,
+          "add_to_cart": 95
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=shirt": {
+          "add_to_cart": 4,
+          "click": 3
+        },
+        "lstm:pref=shirt|brand=Apple": {
+          "add_to_cart": 14,
+          "click": 19,
+          "view": 6
+        },
+        "lstm:h3=click,view,add_to_cart|cat=shirt|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=shirt": {
+          "add_to_cart": 25,
+          "click": 6
+        },
+        "lstm:pref=phone|brand=Nike": {
+          "add_to_cart": 10,
+          "click": 20,
+          "view": 2
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=laptop|pref=shirt": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:pref=shirt|brand=Dell": {
+          "add_to_cart": 6,
+          "view": 2,
+          "click": 7
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=pants": {
+          "click": 27,
+          "add_to_cart": 52
+        },
+        "lstm:pref=laptop|brand=Adidas": {
+          "click": 17,
+          "add_to_cart": 12,
+          "view": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pants|pref=pants": {
+          "click": 4,
+          "add_to_cart": 3
+        },
+        "lstm:h2=add_to_cart,click|cat=pants": {
+          "click": 18,
+          "add_to_cart": 41
+        },
+        "lstm:pref=pants|brand=Adidas": {
+          "click": 64,
+          "add_to_cart": 96,
+          "view": 25
+        },
+        "lstm:h3=start|cat=phone|pref=unknown": {
+          "view": 69
+        },
+        "lstm:h2=start|cat=phone": {
+          "view": 69
+        },
+        "lstm:pref=unknown|brand=Samsung": {
+          "view": 70
+        },
+        "lstm:h3=view|cat=phone|pref=phone": {
+          "click": 23
+        },
+        "lstm:h3=view,click,view|cat=tablet|pref=tablet": {
+          "click": 26
+        },
+        "lstm:h2=click,view|cat=tablet": {
+          "click": 51,
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,view,click|cat=phone|pref=tablet": {
+          "add_to_cart": 12,
+          "click": 4
+        },
+        "lstm:h3=view,click,add_to_cart|cat=laptop|pref=phone": {
+          "click": 2
+        },
+        "lstm:pref=phone|brand=Asus": {
+          "click": 18,
+          "add_to_cart": 1,
+          "view": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h2=add_to_cart,click|cat=tablet": {
+          "add_to_cart": 27,
+          "click": 8
+        },
+        "lstm:pref=laptop|brand=Apple": {
+          "add_to_cart": 6,
+          "click": 15,
+          "view": 4
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=tablet|pref=tablet": {
+          "add_to_cart": 7,
+          "click": 1
+        },
+        "lstm:h3=view|cat=laptop|pref=shirt": {
+          "view": 4,
+          "click": 2
+        },
+        "lstm:pref=shirt|brand=Asus": {
+          "view": 2,
+          "click": 10,
+          "add_to_cart": 4
+        },
+        "lstm:h3=view,view|cat=shirt|pref=laptop": {
+          "click": 3
+        },
+        "lstm:h2=view,view|cat=shirt": {
+          "click": 7
+        },
+        "lstm:pref=laptop|brand=Nike": {
+          "click": 11,
+          "add_to_cart": 3,
+          "view": 5
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=shirt": {
+          "click": 2
+        },
+        "lstm:pref=shirt|brand=HP": {
+          "click": 6,
+          "add_to_cart": 4,
+          "view": 2
+        },
+        "lstm:pref=pc|brand=Dell": {
+          "add_to_cart": 29,
+          "view": 16,
+          "click": 37
+        },
+        "lstm:h3=click,click,add_to_cart|cat=shirt|pref=laptop": {
+          "click": 3
+        },
+        "lstm:h2=click,add_to_cart|cat=shirt": {
+          "click": 21,
+          "add_to_cart": 32
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=laptop|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:pref=tablet|brand=Asus": {
+          "add_to_cart": 7,
+          "click": 5,
+          "view": 3
+        },
+        "lstm:h3=start|cat=pants|pref=unknown": {
+          "view": 76
+        },
+        "lstm:h2=start|cat=pants": {
+          "view": 76
+        },
+        "lstm:pref=unknown|brand=Adidas": {
+          "view": 76
+        },
+        "lstm:h3=view|cat=shirt|pref=pants": {
+          "click": 40
+        },
+        "lstm:h2=view|cat=shirt": {
+          "click": 75,
+          "view": 4
+        },
+        "lstm:h3=view,click|cat=shirt|pref=shirt": {
+          "view": 29
+        },
+        "lstm:pref=shirt|brand=Nike": {
+          "view": 29,
+          "click": 58,
+          "add_to_cart": 85
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=shirt": {
+          "click": 11,
+          "add_to_cart": 17
+        },
+        "lstm:h2=click,view|cat=shirt": {
+          "click": 25,
+          "add_to_cart": 41
+        },
+        "lstm:h3=click,view,click|cat=phone|pref=shirt": {
+          "click": 1,
+          "add_to_cart": 3
+        },
+        "lstm:pref=shirt|brand=Samsung": {
+          "click": 13,
+          "view": 4,
+          "add_to_cart": 4
+        },
+        "lstm:h3=view,click,click|cat=shirt|pref=phone": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h2=click,click|cat=shirt": {
+          "add_to_cart": 18,
+          "click": 9
+        },
+        "lstm:h3=click,click,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=shirt": {
+          "add_to_cart": 8,
+          "click": 3
+        },
+        "lstm:h3=view,click|cat=phone|pref=phone": {
+          "view": 20
+        },
+        "lstm:h3=view,click,view|cat=tablet|pref=phone": {
+          "click": 18
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=tablet": {
+          "add_to_cart": 19,
+          "click": 9
+        },
+        "lstm:h3=view,click,add_to_cart|cat=phone|pref=tablet": {
+          "add_to_cart": 17,
+          "click": 11
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=phone": {
+          "click": 9,
+          "add_to_cart": 12
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=phone": {
+          "click": 33,
+          "add_to_cart": 39
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=tablet|pref=phone": {
+          "add_to_cart": 8,
+          "click": 1
+        },
+        "lstm:h3=start|cat=pc|pref=unknown": {
+          "view": 63
+        },
+        "lstm:h2=start|cat=pc": {
+          "view": 63
+        },
+        "lstm:pref=unknown|brand=HP": {
+          "view": 32
+        },
+        "lstm:h3=view|cat=pc|pref=pc": {
+          "view": 24
+        },
+        "lstm:h2=view|cat=pc": {
+          "view": 57,
+          "click": 3
+        },
+        "lstm:pref=pc|brand=HP": {
+          "view": 12,
+          "add_to_cart": 21,
+          "click": 44
+        },
+        "lstm:h3=view,view|cat=laptop|pref=pc": {
+          "click": 21
+        },
+        "lstm:h2=view,view|cat=laptop": {
+          "click": 49
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=laptop": {
+          "click": 22
+        },
+        "lstm:h3=click,click,add_to_cart|cat=phone|pref=laptop": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:pref=laptop|brand=Samsung": {
+          "click": 16,
+          "add_to_cart": 10,
+          "view": 10
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=phone": {
+          "click": 3
+        },
+        "lstm:h2=add_to_cart,click|cat=laptop": {
+          "click": 16,
+          "add_to_cart": 20
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pc|pref=laptop": {
+          "add_to_cart": 4
+        },
+        "lstm:h2=click,click|cat=pc": {
+          "add_to_cart": 64,
+          "click": 37
+        },
+        "lstm:h3=view|cat=pants|pref=pants": {
+          "click": 24
+        },
+        "lstm:h3=view,click,view|cat=pants|pref=shirt": {
+          "add_to_cart": 13,
+          "click": 11
+        },
+        "lstm:h2=click,view|cat=pants": {
+          "add_to_cart": 35,
+          "click": 23
+        },
+        "lstm:h3=click,view,add_to_cart|cat=tablet|pref=pants": {
+          "click": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=tablet": {
+          "click": 2,
+          "add_to_cart": 2
+        },
+        "lstm:pref=pants|brand=Apple": {
+          "click": 17,
+          "view": 3,
+          "add_to_cart": 7
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:pref=tablet|brand=Adidas": {
+          "add_to_cart": 11,
+          "view": 5,
+          "click": 11
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 8,
+          "click": 5
+        },
+        "lstm:h2=click,add_to_cart|cat=pants": {
+          "add_to_cart": 33,
+          "click": 20
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 9,
+          "click": 4
+        },
+        "lstm:h3=view|cat=tablet|pref=phone": {
+          "click": 26
+        },
+        "lstm:h2=view|cat=tablet": {
+          "click": 62,
+          "view": 5
+        },
+        "lstm:h3=view,click|cat=phone|pref=tablet": {
+          "view": 28
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=phone": {
+          "click": 2,
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=tablet": {
+          "add_to_cart": 4,
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=phone|pref=tablet": {
+          "add_to_cart": 3,
+          "click": 4
+        },
+        "lstm:pref=unknown|brand=Lenovo": {
+          "view": 31
+        },
+        "lstm:h3=view|cat=laptop|pref=pc": {
+          "view": 25,
+          "click": 1
+        },
+        "lstm:h3=view,view|cat=laptop|pref=laptop": {
+          "click": 21
+        },
+        "lstm:h3=view,view,click|cat=laptop|pref=laptop": {
+          "click": 21
+        },
+        "lstm:h2=view,click|cat=laptop": {
+          "click": 53,
+          "add_to_cart": 2,
+          "view": 3
+        },
+        "lstm:h3=view,click,click|cat=pc|pref=laptop": {
+          "add_to_cart": 14,
+          "click": 14
+        },
+        "lstm:h3=click,click,add_to_cart|cat=tablet|pref=pc": {
+          "click": 2
+        },
+        "lstm:pref=pc|brand=Samsung": {
+          "click": 18,
+          "add_to_cart": 12
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h2=add_to_cart,click|cat=pc": {
+          "add_to_cart": 23,
+          "click": 11
+        },
+        "lstm:pref=tablet|brand=Lenovo": {
+          "add_to_cart": 4,
+          "click": 9
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=laptop|pref=pc": {
+          "add_to_cart": 2,
+          "click": 2
+        },
+        "lstm:h3=view|cat=tablet|pref=pants": {
+          "click": 4
+        },
+        "lstm:h3=view,click|cat=pants|pref=tablet": {
+          "view": 5
+        },
+        "lstm:h2=view,click|cat=pants": {
+          "view": 66,
+          "click": 14,
+          "add_to_cart": 13
+        },
+        "lstm:h3=view,click,view|cat=laptop|pref=pants": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h2=click,view|cat=laptop": {
+          "add_to_cart": 2,
+          "click": 11
+        },
+        "lstm:pref=pants|brand=Dell": {
+          "add_to_cart": 7,
+          "click": 8
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pants|pref=laptop": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=pants": {
+          "add_to_cart": 26,
+          "click": 14
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=laptop|pref=pants": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pants|pref=laptop": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=shirt|pref=pants": {
+          "add_to_cart": 8,
+          "click": 3
+        },
+        "lstm:h3=view|cat=shirt|pref=tablet": {
+          "click": 5
+        },
+        "lstm:pref=tablet|brand=Nike": {
+          "click": 10,
+          "view": 5,
+          "add_to_cart": 8
+        },
+        "lstm:h3=view,click|cat=tablet|pref=shirt": {
+          "view": 5
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=tablet": {
+          "click": 3,
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,view,click|cat=pants|pref=shirt": {
+          "click": 1,
+          "add_to_cart": 5
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h2=click,click|cat=tablet": {
+          "add_to_cart": 20,
+          "click": 16
+        },
+        "lstm:pref=pants|brand=Samsung": {
+          "add_to_cart": 11,
+          "view": 7,
+          "click": 8
+        },
+        "lstm:h3=click,click,add_to_cart|cat=phone|pref=tablet": {
+          "add_to_cart": 7,
+          "click": 3
+        },
+        "lstm:pref=unknown|brand=Asus": {
+          "view": 31
+        },
+        "lstm:h3=view|cat=pc|pref=laptop": {
+          "view": 25
+        },
+        "lstm:h3=view,view,click|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=pc|pref=pants": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:pref=pants|brand=HP": {
+          "add_to_cart": 7,
+          "click": 10,
+          "view": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=laptop|pref=pc": {
+          "add_to_cart": 16,
+          "click": 12
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=laptop|pref=laptop": {
+          "add_to_cart": 13,
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=phone|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=pants|pref=shirt": {
+          "view": 32
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=pants": {
+          "add_to_cart": 19,
+          "click": 8
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pants|pref=shirt": {
+          "add_to_cart": 7,
+          "click": 8
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 7,
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 12,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=shirt|pref=pants": {
+          "add_to_cart": 7,
+          "click": 7
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=shirt": {
+          "add_to_cart": 43,
+          "click": 27
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=phone": {
+          "click": 31
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=phone": {
+          "add_to_cart": 22,
+          "click": 8
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=shirt|pref=phone": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=phone|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,view|cat=pc|pref=pc": {
+          "click": 28
+        },
+        "lstm:h3=view,view,click|cat=tablet|pref=pc": {
+          "click": 6
+        },
+        "lstm:h3=view,click,click|cat=pc|pref=tablet": {
+          "add_to_cart": 4,
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=laptop": {
+          "add_to_cart": 7
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pc|pref=pc": {
+          "add_to_cart": 2
+        },
+        "lstm:h2=click,add_to_cart|cat=pc": {
+          "add_to_cart": 41,
+          "click": 28
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=shirt": {
+          "add_to_cart": 3,
+          "click": 6
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pants|pref=shirt": {
+          "add_to_cart": 3,
+          "click": 4
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=shirt|pref=pants": {
+          "add_to_cart": 4,
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=shirt": {
+          "add_to_cart": 5,
+          "click": 4
+        },
+        "lstm:h3=view,click|cat=shirt|pref=phone": {
+          "view": 2
+        },
+        "lstm:h3=view,click,view|cat=laptop|pref=shirt": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=phone|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pc|pref=phone": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:pref=phone|brand=HP": {
+          "click": 7,
+          "add_to_cart": 6,
+          "view": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view|cat=phone|pref=pc": {
+          "view": 1,
+          "click": 1
+        },
+        "lstm:pref=pc|brand=Apple": {
+          "view": 2,
+          "add_to_cart": 6,
+          "click": 10
+        },
+        "lstm:h3=view,view|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:pref=phone|brand=Lenovo": {
+          "click": 5,
+          "add_to_cart": 3,
+          "view": 1
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=pc": {
+          "click": 3,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=laptop": {
+          "click": 6,
+          "add_to_cart": 4
+        },
+        "lstm:h3=view|cat=shirt|pref=phone": {
+          "click": 5
+        },
+        "lstm:h3=view,click,view|cat=pants|pref=pants": {
+          "add_to_cart": 18,
+          "click": 6
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 15,
+          "click": 4
+        },
+        "lstm:h3=view|cat=tablet|pref=tablet": {
+          "click": 22
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=phone": {
+          "click": 4,
+          "add_to_cart": 3
+        },
+        "lstm:h2=click,click|cat=phone": {
+          "click": 16,
+          "add_to_cart": 25
+        },
+        "lstm:h3=click,click,click|cat=phone|pref=phone": {
+          "click": 3,
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,view,click|cat=laptop|pref=pc": {
+          "click": 25
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=laptop": {
+          "add_to_cart": 14,
+          "click": 3
+        },
+        "lstm:h3=view|cat=shirt|pref=shirt": {
+          "click": 22
+        },
+        "lstm:h3=click,view,click|cat=pc|pref=shirt": {
+          "click": 2
+        },
+        "lstm:h3=view,click,click|cat=pants|pref=pc": {
+          "add_to_cart": 2,
+          "click": 3
+        },
+        "lstm:h2=click,click|cat=pants": {
+          "add_to_cart": 21,
+          "click": 14
+        },
+        "lstm:pref=pc|brand=Adidas": {
+          "add_to_cart": 9,
+          "click": 19,
+          "view": 3
+        },
+        "lstm:h3=click,click,add_to_cart|cat=shirt|pref=pants": {
+          "click": 5,
+          "add_to_cart": 3
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pants|pref=shirt": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click|cat=phone|pref=pants": {
+          "view": 6
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=tablet": {
+          "add_to_cart": 6,
+          "click": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=tablet|pref=phone": {
+          "add_to_cart": 6,
+          "click": 6
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=shirt|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=phone|pref=pc": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,view,add_to_cart|cat=laptop|pref=shirt": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=laptop": {
+          "click": 2,
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,add_to_cart,click|cat=shirt|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h2=add_to_cart,click|cat=shirt": {
+          "add_to_cart": 33,
+          "click": 12
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 9,
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pc|pref=shirt": {
+          "click": 1
+        },
+        "lstm:pref=shirt|brand=Lenovo": {
+          "click": 4,
+          "view": 6,
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click,add_to_cart|cat=tablet|pref=tablet": {
+          "add_to_cart": 14,
+          "click": 4
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=tablet": {
+          "click": 7,
+          "add_to_cart": 13
+        },
+        "lstm:h3=view|cat=pc|pref=shirt": {
+          "view": 4
+        },
+        "lstm:h3=view,view,click|cat=tablet|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=tablet": {
+          "add_to_cart": 5,
+          "click": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pc|pref=laptop": {
+          "add_to_cart": 16,
+          "click": 14
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=laptop|pref=pc": {
+          "click": 6,
+          "add_to_cart": 7
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pc|pref=laptop": {
+          "add_to_cart": 5
+        },
+        "lstm:h3=click,view,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 16,
+          "click": 2
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 4,
+          "click": 1
+        },
+        "lstm:h3=view,click,view|cat=laptop|pref=phone": {
+          "click": 5
+        },
+        "lstm:pref=phone|brand=Dell": {
+          "click": 6,
+          "view": 1,
+          "add_to_cart": 6
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=laptop": {
+          "add_to_cart": 4,
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=phone": {
+          "add_to_cart": 10
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=shirt": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 6,
+          "click": 1
+        },
+        "lstm:h3=view|cat=tablet|pref=shirt": {
+          "click": 7
+        },
+        "lstm:pref=tablet|brand=HP": {
+          "add_to_cart": 3,
+          "click": 8,
+          "view": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=phone|pref=pc": {
+          "add_to_cart": 2,
+          "click": 2
+        },
+        "lstm:h3=view,view,click|cat=tablet|pref=shirt": {
+          "click": 2
+        },
+        "lstm:pref=tablet|brand=Dell": {
+          "add_to_cart": 5,
+          "click": 5
+        },
+        "lstm:h3=click,click,add_to_cart|cat=tablet|pref=laptop": {
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pc|pref=laptop": {
+          "click": 1,
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=pants": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pants|pref=phone": {
+          "add_to_cart": 3
+        },
+        "lstm:pref=phone|brand=Adidas": {
+          "add_to_cart": 15,
+          "click": 16,
+          "view": 3
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=shirt|pref=pants": {
+          "add_to_cart": 7,
+          "click": 6
+        },
+        "lstm:h3=view,click|cat=phone|pref=shirt": {
+          "view": 5
+        },
+        "lstm:h3=view,click,view|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:h2=click,view|cat=pc": {
+          "click": 5,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=pc": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=shirt|pref=phone": {
+          "click": 1,
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,view|cat=shirt|pref=pc": {
+          "click": 4
+        },
+        "lstm:pref=pc|brand=Nike": {
+          "click": 14,
+          "add_to_cart": 10,
+          "view": 2
+        },
+        "lstm:h3=view,view,click|cat=laptop|pref=shirt": {
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=shirt|pref=pc": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pc|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=pants|pref=phone": {
+          "add_to_cart": 3,
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 5
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=shirt|pref=shirt": {
+          "click": 5,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=tablet|pref=tablet": {
+          "add_to_cart": 10,
+          "click": 1
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=tablet": {
+          "add_to_cart": 31,
+          "click": 16
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=phone|pref=tablet": {
+          "click": 5,
+          "add_to_cart": 5
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=tablet": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=laptop": {
+          "add_to_cart": 7
+        },
+        "lstm:h3=view|cat=tablet|pref=laptop": {
+          "click": 2,
+          "view": 5
+        },
+        "lstm:h3=view,click|cat=shirt|pref=tablet": {
+          "view": 5
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pants|pref=pants": {
+          "click": 3,
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,view|cat=pants|pref=tablet": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=pants": {
+          "click": 1,
+          "add_to_cart": 11
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=shirt|pref=pc": {
+          "click": 2,
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=shirt": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=pants|pref=pants": {
+          "view": 25
+        },
+        "lstm:h3=view,click,view|cat=tablet|pref=pants": {
+          "click": 5,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 7
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=tablet|pref=tablet": {
+          "view": 23
+        },
+        "lstm:h3=view,view|cat=pc|pref=tablet": {
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,click,click|cat=laptop|pref=laptop": {
+          "click": 2
+        },
+        "lstm:h3=view,click|cat=pc|pref=shirt": {
+          "view": 4
+        },
+        "lstm:h3=view,click,view|cat=pc|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=pc": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,click|cat=pants|pref=shirt": {
+          "add_to_cart": 5
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=tablet": {
+          "click": 8,
+          "add_to_cart": 4
+        },
+        "lstm:h3=click,click,click|cat=phone|pref=tablet": {
+          "add_to_cart": 4
+        },
+        "lstm:h3=click,click,add_to_cart|cat=phone|pref=phone": {
+          "add_to_cart": 5,
+          "click": 2
+        },
+        "lstm:h3=view|cat=shirt|pref=pc": {
+          "view": 2,
+          "click": 3
+        },
+        "lstm:h3=view,view|cat=laptop|pref=shirt": {
+          "click": 4
+        },
+        "lstm:h3=view,view,click|cat=phone|pref=laptop": {
+          "click": 3
+        },
+        "lstm:h3=view,click,click|cat=pc|pref=phone": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pc|pref=pc": {
+          "add_to_cart": 15,
+          "click": 5
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pc|pref=pc": {
+          "click": 5,
+          "add_to_cart": 8
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=laptop|pref=pc": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=shirt|pref=pants": {
+          "add_to_cart": 9
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pants|pref=shirt": {
+          "click": 4,
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=phone": {
+          "add_to_cart": 4
+        },
+        "lstm:h3=click,click,add_to_cart|cat=tablet|pref=tablet": {
+          "add_to_cart": 5
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=laptop": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=phone": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=tablet|pref=shirt": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=phone|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pants|pref=phone": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=shirt|pref=pants": {
+          "add_to_cart": 4,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pc|pref=pc": {
+          "add_to_cart": 5
+        },
+        "lstm:h3=click,view,add_to_cart|cat=shirt|pref=pants": {
+          "add_to_cart": 7,
+          "click": 4
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pants|pref=shirt": {
+          "click": 6,
+          "add_to_cart": 6
+        },
+        "lstm:h3=view|cat=laptop|pref=pants": {
+          "click": 1,
+          "view": 3
+        },
+        "lstm:pref=pants|brand=Asus": {
+          "click": 2,
+          "add_to_cart": 4,
+          "view": 3
+        },
+        "lstm:h3=view,click|cat=pants|pref=laptop": {
+          "view": 1
+        },
+        "lstm:h3=click,view,click|cat=laptop|pref=shirt": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pants|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=pants": {
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=tablet|pref=phone": {
+          "add_to_cart": 7,
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=tablet": {
+          "add_to_cart": 4,
+          "click": 1
+        },
+        "lstm:h3=view|cat=laptop|pref=phone": {
+          "view": 2,
+          "click": 5
+        },
+        "lstm:h3=view,view|cat=tablet|pref=laptop": {
+          "click": 5
+        },
+        "lstm:h2=view,view|cat=tablet": {
+          "click": 5
+        },
+        "lstm:h3=view,view,click|cat=tablet|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pants|pref=shirt": {
+          "add_to_cart": 9
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=phone|pref=phone": {
+          "add_to_cart": 6
+        },
+        "lstm:h3=view,add_to_cart,click|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pants|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=phone|pref=phone": {
+          "click": 3,
+          "add_to_cart": 9
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=tablet": {
+          "click": 3
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pc|pref=pants": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=pc": {
+          "add_to_cart": 2,
+          "click": 5
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=tablet|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,click|cat=shirt|pref=shirt": {
+          "click": 2,
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,click|cat=shirt|pref=shirt": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pants|pref=shirt": {
+          "add_to_cart": 4,
+          "click": 2
+        },
+        "lstm:h3=click,view,click|cat=pants|pref=tablet": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h3=view,click,add_to_cart|cat=laptop|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pants|pref=laptop": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,view|cat=pants|pref=pc": {
+          "click": 3
+        },
+        "lstm:h2=view,view|cat=pants": {
+          "click": 4
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=pants": {
+          "click": 3
+        },
+        "lstm:h3=view,click,click|cat=pc|pref=pc": {
+          "add_to_cart": 18,
+          "click": 5
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pants|pref=phone": {
+          "add_to_cart": 4
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=laptop|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=shirt|pref=pants": {
+          "add_to_cart": 6
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=pants": {
+          "click": 1,
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=shirt|pref=phone": {
+          "click": 2
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=pc": {
+          "add_to_cart": 13
+        },
+        "lstm:h3=view,add_to_cart,click|cat=shirt|pref=shirt": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pants|pref=shirt": {
+          "add_to_cart": 4
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=laptop|pref=laptop": {
+          "click": 1,
+          "add_to_cart": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=shirt|pref=laptop": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 9,
+          "click": 3
+        },
+        "lstm:h3=click,add_to_cart,click|cat=shirt|pref=phone": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=tablet|pref=shirt": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=shirt|pref=pants": {
+          "add_to_cart": 4
+        },
+        "lstm:h3=view,view,click|cat=phone|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pc|pref=laptop": {
+          "add_to_cart": 6,
+          "click": 4
+        },
+        "lstm:h3=view|cat=pants|pref=tablet": {
+          "click": 3
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=laptop": {
+          "add_to_cart": 3,
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=phone|pref=shirt": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=phone": {
+          "click": 3,
+          "add_to_cart": 5
+        },
+        "lstm:h3=view|cat=pc|pref=phone": {
+          "view": 1,
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=laptop|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=laptop": {
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pc|pref=phone": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=click,click,click|cat=phone|pref=pc": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=phone": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=pc|pref=phone": {
+          "view": 1
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=pc": {
+          "click": 2
+        },
+        "lstm:h3=view,click,view|cat=pants|pref=pc": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=shirt|pref=shirt": {
+          "add_to_cart": 4,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=pc": {
+          "click": 10,
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,view,click|cat=shirt|pref=pc": {
+          "click": 2
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=shirt": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,view,click|cat=laptop|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=pants|pref=laptop": {
+          "add_to_cart": 1,
+          "click": 3
+        },
+        "lstm:h3=click,click,click|cat=shirt|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=phone|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=tablet|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pc|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pc|pref=pants": {
+          "click": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=pc": {
+          "click": 3
+        },
+        "lstm:h3=view,add_to_cart,click|cat=shirt|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view|cat=laptop|pref=tablet": {
+          "click": 3,
+          "view": 2
+        },
+        "lstm:h3=view,click|cat=tablet|pref=laptop": {
+          "view": 4
+        },
+        "lstm:h3=view,click,view|cat=laptop|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=view,click|cat=shirt|pref=laptop": {
+          "view": 3
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=shirt": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click|cat=phone|pref=laptop": {
+          "view": 4
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,view|cat=tablet|pref=shirt": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pants|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=pants": {
+          "click": 3,
+          "add_to_cart": 4
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pc|pref=pants": {
+          "add_to_cart": 2,
+          "click": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pants|pref=pc": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=view|cat=pants|pref=phone": {
+          "click": 6
+        },
+        "lstm:h3=view,click|cat=tablet|pref=pants": {
+          "view": 4
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=laptop|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pc|pref=pc": {
+          "click": 3,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pants|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view|cat=pants|pref=pc": {
+          "view": 3,
+          "click": 2
+        },
+        "lstm:h3=view,view|cat=pc|pref=pants": {
+          "click": 3
+        },
+        "lstm:pref=pants|brand=Lenovo": {
+          "click": 7,
+          "add_to_cart": 5,
+          "view": 1
+        },
+        "lstm:h3=view,view,click|cat=pants|pref=pc": {
+          "click": 3
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=laptop|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=pants": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=laptop|pref=laptop": {
+          "click": 3
+        },
+        "lstm:h3=click,click,click|cat=tablet|pref=phone": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click,add_to_cart|cat=shirt|pref=pants": {
+          "click": 3,
+          "add_to_cart": 3
+        },
+        "lstm:h3=add_to_cart,click,click|cat=phone|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=pants": {
+          "add_to_cart": 4,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=pc": {
+          "add_to_cart": 7
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=laptop|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click|cat=tablet|pref=pc": {
+          "view": 1
+        },
+        "lstm:h3=click,view,click|cat=pc|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=pc": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=tablet|pref=tablet": {
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pc|pref=pc": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,click,view|cat=pc|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=shirt|pref=pc": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,view|cat=laptop|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=click,view,click|cat=pants|pref=pants": {
+          "add_to_cart": 3,
+          "click": 5
+        },
+        "lstm:h3=view,view|cat=phone|pref=laptop": {
+          "click": 3
+        },
+        "lstm:h2=view,view|cat=phone": {
+          "click": 5
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=phone": {
+          "click": 3
+        },
+        "lstm:h3=click,click,click|cat=phone|pref=laptop": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=laptop|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pc|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=shirt|pref=pc": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=laptop|pref=phone": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=phone|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=phone": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=shirt|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pc|pref=shirt": {
+          "click": 1,
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pants|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,view|cat=pants|pref=phone": {
+          "click": 3,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,click|cat=pants|pref=pants": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=pants|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,view|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=tablet|pref=pc": {
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=laptop|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pants|pref=pants": {
+          "click": 2,
+          "add_to_cart": 5
+        },
+        "lstm:h3=view|cat=phone|pref=laptop": {
+          "click": 1,
+          "view": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pc|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=tablet|pref=pants": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=laptop|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=shirt|pref=pants": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=phone": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click|cat=pc|pref=pants": {
+          "view": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pants|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,view|cat=pc|pref=pants": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pc|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=laptop|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,view,click|cat=pants|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view|cat=pants|pref=laptop": {
+          "click": 2,
+          "view": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=phone|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view|cat=pc|pref=pants": {
+          "view": 2,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=click,view,click|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,click,click|cat=tablet|pref=tablet": {
+          "add_to_cart": 4,
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=phone|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=shirt": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,view|cat=phone|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=view,view,click|cat=laptop|pref=phone": {
+          "click": 2
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=tablet|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pants|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pants|pref=laptop": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view|cat=phone|pref=shirt": {
+          "click": 3
+        },
+        "lstm:h3=click,click,click|cat=pants|pref=pc": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=view|cat=shirt|pref=laptop": {
+          "view": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pc|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=phone": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=pants": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,click,click|cat=shirt|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=click,click,click|cat=pants|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=laptop|pref=pants": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pc|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pants|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=phone|pref=pants": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pants|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=pants|pref=phone": {
+          "view": 3
+        },
+        "lstm:h3=click,click,click|cat=shirt|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pc|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pants|pref=pc": {
+          "click": 3
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=pants": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pc|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view|cat=tablet|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=click,view,click|cat=laptop|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pc|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=phone|pref=pc": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,view,click|cat=shirt|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=laptop|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pc|pref=shirt": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=pants": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=laptop|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=shirt|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pc|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=laptop|pref=tablet": {
+          "view": 1
+        },
+        "lstm:h3=view,click,view|cat=tablet|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=shirt|pref=phone": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=phone|pref=shirt": {
+          "click": 2
+        },
+        "lstm:h3=view,click,add_to_cart|cat=phone|pref=shirt": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,view,click|cat=laptop|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=view|cat=phone|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=shirt|pref=phone": {
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=phone|pref=pants": {
+          "click": 3,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=pc": {
+          "add_to_cart": 3,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pc|pref=pants": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view|cat=pc|pref=tablet": {
+          "click": 1,
+          "view": 1
+        },
+        "lstm:h3=view,click|cat=pc|pref=pc": {
+          "view": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=shirt|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=shirt|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=phone": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=phone|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=phone|pref=pants": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pants|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,view,click|cat=phone|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pc|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=view,view|cat=laptop|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=laptop|pref=pc": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=laptop|pref=pc": {
+          "view": 1
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=laptop|pref=phone": {
+          "view": 1
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=shirt|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=shirt|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=tablet|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,click|cat=pants|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=laptop|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=shirt|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,view|cat=phone|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=laptop|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pants|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=pants|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=tablet|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=laptop|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=tablet|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,view,click|cat=pants|pref=laptop": {
+          "add_to_cart": 1
+        }
+      },
+      "global_counts": {
+        "view": 800,
+        "click": 1273,
+        "add_to_cart": 1127
+      }
+    },
+    "BiLSTM": {
+      "name": "BiLSTM",
+      "counts": {
+        "lstm:h3=start|cat=tablet|pref=unknown": {
+          "view": 62
+        },
+        "lstm:h2=start|cat=tablet": {
+          "view": 62
+        },
+        "lstm:pref=unknown|brand=Apple": {
+          "view": 61
+        },
+        "lstm:cat=tablet": {
+          "view": 131,
+          "click": 214,
+          "add_to_cart": 181
+        },
+        "bilstm:prev=start|next=click|cat=tablet": {
+          "view": 59
+        },
+        "lstm:h3=view|cat=phone|pref=tablet": {
+          "click": 25
+        },
+        "lstm:h2=view|cat=phone": {
+          "click": 54,
+          "view": 2
+        },
+        "lstm:pref=tablet|brand=Samsung": {
+          "click": 88,
+          "add_to_cart": 69,
+          "view": 25
+        },
+        "lstm:cat=phone": {
+          "click": 229,
+          "add_to_cart": 173,
+          "view": 134
+        },
+        "bilstm:prev=view|next=view|cat=phone": {
+          "click": 54
+        },
+        "lstm:h3=view,click|cat=tablet|pref=phone": {
+          "view": 27
+        },
+        "lstm:h2=view,click|cat=tablet": {
+          "view": 64,
+          "add_to_cart": 49,
+          "click": 33
+        },
+        "lstm:pref=phone|brand=Apple": {
+          "view": 15,
+          "click": 93,
+          "add_to_cart": 77
+        },
+        "bilstm:prev=click|next=click|cat=tablet": {
+          "view": 61,
+          "add_to_cart": 26,
+          "click": 18
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=tablet": {
+          "click": 27
+        },
+        "lstm:h2=click,view|cat=phone": {
+          "click": 66,
+          "add_to_cart": 5
+        },
+        "bilstm:prev=view|next=add_to_cart|cat=phone": {
+          "click": 46,
+          "add_to_cart": 5
+        },
+        "lstm:h3=click,view,click|cat=phone|pref=phone": {
+          "add_to_cart": 20,
+          "click": 8
+        },
+        "lstm:h2=view,click|cat=phone": {
+          "add_to_cart": 38,
+          "click": 17,
+          "view": 63
+        },
+        "lstm:pref=phone|brand=Samsung": {
+          "add_to_cart": 63,
+          "view": 32,
+          "click": 63
+        },
+        "bilstm:prev=click|next=click|cat=phone": {
+          "add_to_cart": 28,
+          "view": 60,
+          "click": 13
+        },
+        "lstm:h3=view,click,add_to_cart|cat=tablet|pref=phone": {
+          "click": 6,
+          "add_to_cart": 13
+        },
+        "lstm:h2=click,add_to_cart|cat=tablet": {
+          "click": 21,
+          "add_to_cart": 50
+        },
+        "bilstm:prev=add_to_cart|next=add_to_cart|cat=tablet": {
+          "click": 20,
+          "add_to_cart": 34
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=tablet": {
+          "add_to_cart": 4
+        },
+        "lstm:h2=add_to_cart,click|cat=phone": {
+          "add_to_cart": 13,
+          "click": 7
+        },
+        "lstm:pref=tablet|brand=Apple": {
+          "add_to_cart": 75,
+          "click": 83,
+          "view": 26
+        },
+        "bilstm:prev=click|next=add_to_cart|cat=phone": {
+          "add_to_cart": 38,
+          "click": 20,
+          "view": 3
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=phone|pref=phone": {
+          "add_to_cart": 3,
+          "click": 1
+        },
+        "lstm:h2=click,add_to_cart|cat=phone": {
+          "add_to_cart": 52,
+          "click": 29
+        },
+        "bilstm:prev=add_to_cart|next=end|cat=phone": {
+          "add_to_cart": 34,
+          "click": 19
+        },
+        "lstm:h3=start|cat=laptop|pref=unknown": {
+          "view": 64
+        },
+        "lstm:h2=start|cat=laptop": {
+          "view": 64
+        },
+        "lstm:pref=unknown|brand=Dell": {
+          "view": 33
+        },
+        "lstm:cat=laptop": {
+          "view": 128,
+          "add_to_cart": 176,
+          "click": 207
+        },
+        "bilstm:prev=start|next=view|cat=laptop": {
+          "view": 59
+        },
+        "lstm:h3=view|cat=laptop|pref=laptop": {
+          "view": 25
+        },
+        "lstm:h2=view|cat=laptop": {
+          "view": 61,
+          "click": 12
+        },
+        "lstm:pref=laptop|brand=Asus": {
+          "view": 12,
+          "add_to_cart": 28,
+          "click": 35
+        },
+        "bilstm:prev=view|next=click|cat=laptop": {
+          "view": 61,
+          "click": 52,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,view|cat=pc|pref=laptop": {
+          "click": 28
+        },
+        "lstm:h2=view,view|cat=pc": {
+          "click": 63
+        },
+        "lstm:pref=laptop|brand=HP": {
+          "click": 51,
+          "add_to_cart": 36,
+          "view": 12
+        },
+        "lstm:cat=pc": {
+          "click": 234,
+          "add_to_cart": 165,
+          "view": 127
+        },
+        "bilstm:prev=view|next=click|cat=pc": {
+          "click": 65,
+          "view": 57,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=pc": {
+          "click": 26
+        },
+        "lstm:h2=view,click|cat=pc": {
+          "click": 64,
+          "view": 7
+        },
+        "lstm:pref=pc|brand=Lenovo": {
+          "click": 46,
+          "view": 13,
+          "add_to_cart": 34
+        },
+        "bilstm:prev=click|next=add_to_cart|cat=pc": {
+          "click": 67,
+          "add_to_cart": 43,
+          "view": 3
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=pc": {
+          "add_to_cart": 19,
+          "click": 6
+        },
+        "lstm:h2=click,click|cat=laptop": {
+          "add_to_cart": 69,
+          "click": 20
+        },
+        "lstm:pref=pc|brand=Asus": {
+          "add_to_cart": 47,
+          "click": 39,
+          "view": 10
+        },
+        "bilstm:prev=click|next=add_to_cart|cat=laptop": {
+          "add_to_cart": 47,
+          "click": 50
+        },
+        "lstm:h3=click,click,add_to_cart|cat=laptop|pref=laptop": {
+          "add_to_cart": 21,
+          "click": 7
+        },
+        "lstm:h2=click,add_to_cart|cat=laptop": {
+          "add_to_cart": 45,
+          "click": 27
+        },
+        "lstm:pref=laptop|brand=Dell": {
+          "add_to_cart": 32,
+          "click": 35,
+          "view": 13
+        },
+        "bilstm:prev=add_to_cart|next=add_to_cart|cat=laptop": {
+          "add_to_cart": 39,
+          "click": 21
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pc|pref=laptop": {
+          "add_to_cart": 13,
+          "click": 4
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=pc": {
+          "add_to_cart": 36,
+          "click": 20
+        },
+        "lstm:pref=laptop|brand=Lenovo": {
+          "add_to_cart": 39,
+          "view": 13,
+          "click": 37
+        },
+        "bilstm:prev=add_to_cart|next=add_to_cart|cat=pc": {
+          "add_to_cart": 29,
+          "click": 23
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=laptop|pref=pc": {
+          "add_to_cart": 6,
+          "click": 3
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=laptop": {
+          "add_to_cart": 35,
+          "click": 17
+        },
+        "bilstm:prev=add_to_cart|next=end|cat=laptop": {
+          "add_to_cart": 23,
+          "click": 11
+        },
+        "lstm:h3=start|cat=shirt|pref=unknown": {
+          "view": 66
+        },
+        "lstm:h2=start|cat=shirt": {
+          "view": 66
+        },
+        "lstm:pref=unknown|brand=Nike": {
+          "view": 66
+        },
+        "lstm:cat=shirt": {
+          "view": 134,
+          "add_to_cart": 211,
+          "click": 194
+        },
+        "bilstm:prev=start|next=click|cat=shirt": {
+          "view": 58
+        },
+        "lstm:h3=view|cat=pants|pref=shirt": {
+          "click": 24
+        },
+        "lstm:h2=view|cat=pants": {
+          "click": 61,
+          "view": 4
+        },
+        "lstm:pref=shirt|brand=Adidas": {
+          "click": 68,
+          "add_to_cart": 78,
+          "view": 32
+        },
+        "lstm:cat=pants": {
+          "click": 195,
+          "view": 146,
+          "add_to_cart": 221
+        },
+        "bilstm:prev=view|next=view|cat=pants": {
+          "click": 61
+        },
+        "lstm:h3=view,click|cat=shirt|pref=pants": {
+          "view": 25
+        },
+        "lstm:h2=view,click|cat=shirt": {
+          "view": 64,
+          "add_to_cart": 19,
+          "click": 12
+        },
+        "lstm:pref=pants|brand=Nike": {
+          "view": 25,
+          "click": 81,
+          "add_to_cart": 95
+        },
+        "bilstm:prev=click|next=add_to_cart|cat=shirt": {
+          "view": 36,
+          "add_to_cart": 34,
+          "click": 21
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=shirt": {
+          "add_to_cart": 4,
+          "click": 3
+        },
+        "lstm:pref=shirt|brand=Apple": {
+          "add_to_cart": 14,
+          "click": 19,
+          "view": 6
+        },
+        "lstm:h3=click,view,add_to_cart|cat=shirt|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=shirt": {
+          "add_to_cart": 25,
+          "click": 6
+        },
+        "lstm:pref=phone|brand=Nike": {
+          "add_to_cart": 10,
+          "click": 20,
+          "view": 2
+        },
+        "bilstm:prev=add_to_cart|next=add_to_cart|cat=shirt": {
+          "add_to_cart": 44,
+          "click": 23
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=laptop|pref=shirt": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:pref=shirt|brand=Dell": {
+          "add_to_cart": 6,
+          "view": 2,
+          "click": 7
+        },
+        "bilstm:prev=add_to_cart|next=click|cat=laptop": {
+          "add_to_cart": 21,
+          "click": 14
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=pants": {
+          "click": 27,
+          "add_to_cart": 52
+        },
+        "lstm:pref=laptop|brand=Adidas": {
+          "click": 17,
+          "add_to_cart": 12,
+          "view": 2
+        },
+        "bilstm:prev=add_to_cart|next=click|cat=pants": {
+          "click": 12,
+          "add_to_cart": 31
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pants|pref=pants": {
+          "click": 4,
+          "add_to_cart": 3
+        },
+        "lstm:h2=add_to_cart,click|cat=pants": {
+          "click": 18,
+          "add_to_cart": 41
+        },
+        "lstm:pref=pants|brand=Adidas": {
+          "click": 64,
+          "add_to_cart": 96,
+          "view": 25
+        },
+        "bilstm:prev=click|next=end|cat=pants": {
+          "click": 10,
+          "add_to_cart": 19
+        },
+        "lstm:h3=start|cat=phone|pref=unknown": {
+          "view": 69
+        },
+        "lstm:h2=start|cat=phone": {
+          "view": 69
+        },
+        "lstm:pref=unknown|brand=Samsung": {
+          "view": 70
+        },
+        "bilstm:prev=start|next=click|cat=phone": {
+          "view": 66
+        },
+        "lstm:h3=view|cat=phone|pref=phone": {
+          "click": 23
+        },
+        "lstm:h3=view,click,view|cat=tablet|pref=tablet": {
+          "click": 26
+        },
+        "lstm:h2=click,view|cat=tablet": {
+          "click": 51,
+          "add_to_cart": 2
+        },
+        "bilstm:prev=view|next=add_to_cart|cat=tablet": {
+          "click": 34,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=phone|pref=tablet": {
+          "add_to_cart": 12,
+          "click": 4
+        },
+        "lstm:h3=view,click,add_to_cart|cat=laptop|pref=phone": {
+          "click": 2
+        },
+        "lstm:pref=phone|brand=Asus": {
+          "click": 18,
+          "add_to_cart": 1,
+          "view": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h2=add_to_cart,click|cat=tablet": {
+          "add_to_cart": 27,
+          "click": 8
+        },
+        "lstm:pref=laptop|brand=Apple": {
+          "add_to_cart": 6,
+          "click": 15,
+          "view": 4
+        },
+        "bilstm:prev=click|next=add_to_cart|cat=tablet": {
+          "add_to_cart": 56,
+          "click": 34,
+          "view": 3
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=tablet|pref=tablet": {
+          "add_to_cart": 7,
+          "click": 1
+        },
+        "bilstm:prev=add_to_cart|next=end|cat=tablet": {
+          "add_to_cart": 29,
+          "click": 12
+        },
+        "bilstm:prev=start|next=view|cat=shirt": {
+          "view": 8
+        },
+        "lstm:h3=view|cat=laptop|pref=shirt": {
+          "view": 4,
+          "click": 2
+        },
+        "lstm:pref=shirt|brand=Asus": {
+          "view": 2,
+          "click": 10,
+          "add_to_cart": 4
+        },
+        "lstm:h3=view,view|cat=shirt|pref=laptop": {
+          "click": 3
+        },
+        "lstm:h2=view,view|cat=shirt": {
+          "click": 7
+        },
+        "lstm:pref=laptop|brand=Nike": {
+          "click": 11,
+          "add_to_cart": 3,
+          "view": 5
+        },
+        "bilstm:prev=view|next=click|cat=shirt": {
+          "click": 18,
+          "add_to_cart": 15,
+          "view": 4
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=shirt": {
+          "click": 2
+        },
+        "lstm:pref=shirt|brand=HP": {
+          "click": 6,
+          "add_to_cart": 4,
+          "view": 2
+        },
+        "lstm:pref=pc|brand=Dell": {
+          "add_to_cart": 29,
+          "view": 16,
+          "click": 37
+        },
+        "bilstm:prev=click|next=click|cat=laptop": {
+          "add_to_cart": 30,
+          "click": 30,
+          "view": 3
+        },
+        "lstm:h3=click,click,add_to_cart|cat=shirt|pref=laptop": {
+          "click": 3
+        },
+        "lstm:h2=click,add_to_cart|cat=shirt": {
+          "click": 21,
+          "add_to_cart": 32
+        },
+        "bilstm:prev=add_to_cart|next=click|cat=shirt": {
+          "click": 13,
+          "add_to_cart": 27
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=laptop|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:pref=tablet|brand=Asus": {
+          "add_to_cart": 7,
+          "click": 5,
+          "view": 3
+        },
+        "bilstm:prev=click|next=end|cat=laptop": {
+          "add_to_cart": 14,
+          "click": 9
+        },
+        "lstm:h3=start|cat=pants|pref=unknown": {
+          "view": 76
+        },
+        "lstm:h2=start|cat=pants": {
+          "view": 76
+        },
+        "lstm:pref=unknown|brand=Adidas": {
+          "view": 76
+        },
+        "bilstm:prev=start|next=click|cat=pants": {
+          "view": 71
+        },
+        "lstm:h3=view|cat=shirt|pref=pants": {
+          "click": 40
+        },
+        "lstm:h2=view|cat=shirt": {
+          "click": 75,
+          "view": 4
+        },
+        "bilstm:prev=view|next=view|cat=shirt": {
+          "click": 75
+        },
+        "lstm:h3=view,click|cat=shirt|pref=shirt": {
+          "view": 29
+        },
+        "lstm:pref=shirt|brand=Nike": {
+          "view": 29,
+          "click": 58,
+          "add_to_cart": 85
+        },
+        "bilstm:prev=click|next=click|cat=shirt": {
+          "view": 28,
+          "click": 5,
+          "add_to_cart": 17
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=shirt": {
+          "click": 11,
+          "add_to_cart": 17
+        },
+        "lstm:h2=click,view|cat=shirt": {
+          "click": 25,
+          "add_to_cart": 41
+        },
+        "lstm:h3=click,view,click|cat=phone|pref=shirt": {
+          "click": 1,
+          "add_to_cart": 3
+        },
+        "lstm:pref=shirt|brand=Samsung": {
+          "click": 13,
+          "view": 4,
+          "add_to_cart": 4
+        },
+        "lstm:h3=view,click,click|cat=shirt|pref=phone": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h2=click,click|cat=shirt": {
+          "add_to_cart": 18,
+          "click": 9
+        },
+        "lstm:h3=click,click,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=shirt": {
+          "add_to_cart": 8,
+          "click": 3
+        },
+        "bilstm:prev=add_to_cart|next=end|cat=pants": {
+          "add_to_cart": 27,
+          "click": 11
+        },
+        "lstm:h3=view,click|cat=phone|pref=phone": {
+          "view": 20
+        },
+        "lstm:h3=view,click,view|cat=tablet|pref=phone": {
+          "click": 18
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=tablet": {
+          "add_to_cart": 19,
+          "click": 9
+        },
+        "lstm:h3=view,click,add_to_cart|cat=phone|pref=tablet": {
+          "add_to_cart": 17,
+          "click": 11
+        },
+        "bilstm:prev=add_to_cart|next=click|cat=phone": {
+          "add_to_cart": 21,
+          "click": 13
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=phone": {
+          "click": 9,
+          "add_to_cart": 12
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=phone": {
+          "click": 33,
+          "add_to_cart": 39
+        },
+        "bilstm:prev=add_to_cart|next=add_to_cart|cat=phone": {
+          "click": 32,
+          "add_to_cart": 37
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=tablet|pref=phone": {
+          "add_to_cart": 8,
+          "click": 1
+        },
+        "bilstm:prev=click|next=end|cat=tablet": {
+          "add_to_cart": 14,
+          "click": 5
+        },
+        "lstm:h3=start|cat=pc|pref=unknown": {
+          "view": 63
+        },
+        "lstm:h2=start|cat=pc": {
+          "view": 63
+        },
+        "lstm:pref=unknown|brand=HP": {
+          "view": 32
+        },
+        "bilstm:prev=start|next=view|cat=pc": {
+          "view": 55
+        },
+        "lstm:h3=view|cat=pc|pref=pc": {
+          "view": 24
+        },
+        "lstm:h2=view|cat=pc": {
+          "view": 57,
+          "click": 3
+        },
+        "lstm:pref=pc|brand=HP": {
+          "view": 12,
+          "add_to_cart": 21,
+          "click": 44
+        },
+        "lstm:h3=view,view|cat=laptop|pref=pc": {
+          "click": 21
+        },
+        "lstm:h2=view,view|cat=laptop": {
+          "click": 49
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=laptop": {
+          "click": 22
+        },
+        "lstm:h3=click,click,add_to_cart|cat=phone|pref=laptop": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:pref=laptop|brand=Samsung": {
+          "click": 16,
+          "add_to_cart": 10,
+          "view": 10
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=phone": {
+          "click": 3
+        },
+        "lstm:h2=add_to_cart,click|cat=laptop": {
+          "click": 16,
+          "add_to_cart": 20
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pc|pref=laptop": {
+          "add_to_cart": 4
+        },
+        "lstm:h2=click,click|cat=pc": {
+          "add_to_cart": 64,
+          "click": 37
+        },
+        "bilstm:prev=click|next=end|cat=pc": {
+          "add_to_cart": 20,
+          "click": 10
+        },
+        "lstm:h3=view|cat=pants|pref=pants": {
+          "click": 24
+        },
+        "lstm:h3=view,click,view|cat=pants|pref=shirt": {
+          "add_to_cart": 13,
+          "click": 11
+        },
+        "lstm:h2=click,view|cat=pants": {
+          "add_to_cart": 35,
+          "click": 23
+        },
+        "bilstm:prev=view|next=click|cat=pants": {
+          "add_to_cart": 11,
+          "click": 11,
+          "view": 4
+        },
+        "lstm:h3=click,view,add_to_cart|cat=tablet|pref=pants": {
+          "click": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=tablet": {
+          "click": 2,
+          "add_to_cart": 2
+        },
+        "lstm:pref=pants|brand=Apple": {
+          "click": 17,
+          "view": 3,
+          "add_to_cart": 7
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:pref=tablet|brand=Adidas": {
+          "add_to_cart": 11,
+          "view": 5,
+          "click": 11
+        },
+        "bilstm:prev=click|next=add_to_cart|cat=pants": {
+          "add_to_cart": 35,
+          "view": 41,
+          "click": 25
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 8,
+          "click": 5
+        },
+        "lstm:h2=click,add_to_cart|cat=pants": {
+          "add_to_cart": 33,
+          "click": 20
+        },
+        "bilstm:prev=add_to_cart|next=add_to_cart|cat=pants": {
+          "add_to_cart": 53,
+          "click": 38
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 9,
+          "click": 4
+        },
+        "lstm:h3=view|cat=tablet|pref=phone": {
+          "click": 26
+        },
+        "lstm:h2=view|cat=tablet": {
+          "click": 62,
+          "view": 5
+        },
+        "bilstm:prev=view|next=view|cat=tablet": {
+          "click": 62
+        },
+        "lstm:h3=view,click|cat=phone|pref=tablet": {
+          "view": 28
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=phone": {
+          "click": 2,
+          "add_to_cart": 2
+        },
+        "bilstm:prev=view|next=add_to_cart|cat=shirt": {
+          "click": 14,
+          "add_to_cart": 26
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=tablet": {
+          "add_to_cart": 4,
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=phone|pref=tablet": {
+          "add_to_cart": 3,
+          "click": 4
+        },
+        "lstm:pref=unknown|brand=Lenovo": {
+          "view": 31
+        },
+        "lstm:h3=view|cat=laptop|pref=pc": {
+          "view": 25,
+          "click": 1
+        },
+        "lstm:h3=view,view|cat=laptop|pref=laptop": {
+          "click": 21
+        },
+        "lstm:h3=view,view,click|cat=laptop|pref=laptop": {
+          "click": 21
+        },
+        "lstm:h2=view,click|cat=laptop": {
+          "click": 53,
+          "add_to_cart": 2,
+          "view": 3
+        },
+        "lstm:h3=view,click,click|cat=pc|pref=laptop": {
+          "add_to_cart": 14,
+          "click": 14
+        },
+        "bilstm:prev=click|next=click|cat=pc": {
+          "add_to_cart": 24,
+          "click": 35,
+          "view": 4
+        },
+        "lstm:h3=click,click,add_to_cart|cat=tablet|pref=pc": {
+          "click": 2
+        },
+        "lstm:pref=pc|brand=Samsung": {
+          "click": 18,
+          "add_to_cart": 12
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h2=add_to_cart,click|cat=pc": {
+          "add_to_cart": 23,
+          "click": 11
+        },
+        "lstm:pref=tablet|brand=Lenovo": {
+          "add_to_cart": 4,
+          "click": 9
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=laptop|pref=pc": {
+          "add_to_cart": 2,
+          "click": 2
+        },
+        "lstm:h3=view|cat=tablet|pref=pants": {
+          "click": 4
+        },
+        "lstm:h3=view,click|cat=pants|pref=tablet": {
+          "view": 5
+        },
+        "lstm:h2=view,click|cat=pants": {
+          "view": 66,
+          "click": 14,
+          "add_to_cart": 13
+        },
+        "lstm:h3=view,click,view|cat=laptop|pref=pants": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h2=click,view|cat=laptop": {
+          "add_to_cart": 2,
+          "click": 11
+        },
+        "lstm:pref=pants|brand=Dell": {
+          "add_to_cart": 7,
+          "click": 8
+        },
+        "bilstm:prev=view|next=add_to_cart|cat=laptop": {
+          "add_to_cart": 1,
+          "click": 8
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pants|pref=laptop": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=pants": {
+          "add_to_cart": 26,
+          "click": 14
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=laptop|pref=pants": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pants|pref=laptop": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=shirt|pref=pants": {
+          "add_to_cart": 8,
+          "click": 3
+        },
+        "bilstm:prev=add_to_cart|next=end|cat=shirt": {
+          "add_to_cart": 29,
+          "click": 18
+        },
+        "lstm:h3=view|cat=shirt|pref=tablet": {
+          "click": 5
+        },
+        "lstm:pref=tablet|brand=Nike": {
+          "click": 10,
+          "view": 5,
+          "add_to_cart": 8
+        },
+        "lstm:h3=view,click|cat=tablet|pref=shirt": {
+          "view": 5
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=tablet": {
+          "click": 3,
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,view,click|cat=pants|pref=shirt": {
+          "click": 1,
+          "add_to_cart": 5
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h2=click,click|cat=tablet": {
+          "add_to_cart": 20,
+          "click": 16
+        },
+        "lstm:pref=pants|brand=Samsung": {
+          "add_to_cart": 11,
+          "view": 7,
+          "click": 8
+        },
+        "lstm:h3=click,click,add_to_cart|cat=phone|pref=tablet": {
+          "add_to_cart": 7,
+          "click": 3
+        },
+        "lstm:pref=unknown|brand=Asus": {
+          "view": 31
+        },
+        "lstm:h3=view|cat=pc|pref=laptop": {
+          "view": 25
+        },
+        "lstm:h3=view,view,click|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=pc|pref=pants": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:pref=pants|brand=HP": {
+          "add_to_cart": 7,
+          "click": 10,
+          "view": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=laptop|pref=pc": {
+          "add_to_cart": 16,
+          "click": 12
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=laptop|pref=laptop": {
+          "add_to_cart": 13,
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=phone|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=pants|pref=shirt": {
+          "view": 32
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=pants": {
+          "add_to_cart": 19,
+          "click": 8
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pants|pref=shirt": {
+          "add_to_cart": 7,
+          "click": 8
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 7,
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 12,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=shirt|pref=pants": {
+          "add_to_cart": 7,
+          "click": 7
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=shirt": {
+          "add_to_cart": 43,
+          "click": 27
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=phone": {
+          "click": 31
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=phone": {
+          "add_to_cart": 22,
+          "click": 8
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=shirt|pref=phone": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=phone|pref=shirt": {
+          "click": 1
+        },
+        "bilstm:prev=click|next=end|cat=phone": {
+          "click": 7,
+          "add_to_cart": 10
+        },
+        "lstm:h3=view,view|cat=pc|pref=pc": {
+          "click": 28
+        },
+        "lstm:h3=view,view,click|cat=tablet|pref=pc": {
+          "click": 6
+        },
+        "lstm:h3=view,click,click|cat=pc|pref=tablet": {
+          "add_to_cart": 4,
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=laptop": {
+          "add_to_cart": 7
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pc|pref=pc": {
+          "add_to_cart": 2
+        },
+        "lstm:h2=click,add_to_cart|cat=pc": {
+          "add_to_cart": 41,
+          "click": 28
+        },
+        "bilstm:prev=add_to_cart|next=end|cat=pc": {
+          "add_to_cart": 28,
+          "click": 15
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=shirt": {
+          "add_to_cart": 3,
+          "click": 6
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pants|pref=shirt": {
+          "add_to_cart": 3,
+          "click": 4
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=shirt|pref=pants": {
+          "add_to_cart": 4,
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=shirt": {
+          "add_to_cart": 5,
+          "click": 4
+        },
+        "lstm:h3=view,click|cat=shirt|pref=phone": {
+          "view": 2
+        },
+        "lstm:h3=view,click,view|cat=laptop|pref=shirt": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=phone|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pc|pref=phone": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:pref=phone|brand=HP": {
+          "click": 7,
+          "add_to_cart": 6,
+          "view": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view|cat=phone|pref=pc": {
+          "view": 1,
+          "click": 1
+        },
+        "lstm:pref=pc|brand=Apple": {
+          "view": 2,
+          "add_to_cart": 6,
+          "click": 10
+        },
+        "bilstm:prev=view|next=click|cat=phone": {
+          "view": 2,
+          "click": 25
+        },
+        "lstm:h3=view,view|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:pref=phone|brand=Lenovo": {
+          "click": 5,
+          "add_to_cart": 3,
+          "view": 1
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=pc": {
+          "click": 3,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=laptop": {
+          "click": 6,
+          "add_to_cart": 4
+        },
+        "lstm:h3=view|cat=shirt|pref=phone": {
+          "click": 5
+        },
+        "lstm:h3=view,click,view|cat=pants|pref=pants": {
+          "add_to_cart": 18,
+          "click": 6
+        },
+        "bilstm:prev=view|next=add_to_cart|cat=pants": {
+          "add_to_cart": 24,
+          "click": 16
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 15,
+          "click": 4
+        },
+        "lstm:h3=view|cat=tablet|pref=tablet": {
+          "click": 22
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=phone": {
+          "click": 4,
+          "add_to_cart": 3
+        },
+        "lstm:h2=click,click|cat=phone": {
+          "click": 16,
+          "add_to_cart": 25
+        },
+        "lstm:h3=click,click,click|cat=phone|pref=phone": {
+          "click": 3,
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,view,click|cat=laptop|pref=pc": {
+          "click": 25
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=laptop": {
+          "add_to_cart": 14,
+          "click": 3
+        },
+        "lstm:h3=view|cat=shirt|pref=shirt": {
+          "click": 22
+        },
+        "lstm:h3=click,view,click|cat=pc|pref=shirt": {
+          "click": 2
+        },
+        "lstm:h3=view,click,click|cat=pants|pref=pc": {
+          "add_to_cart": 2,
+          "click": 3
+        },
+        "lstm:h2=click,click|cat=pants": {
+          "add_to_cart": 21,
+          "click": 14
+        },
+        "lstm:pref=pc|brand=Adidas": {
+          "add_to_cart": 9,
+          "click": 19,
+          "view": 3
+        },
+        "bilstm:prev=click|next=click|cat=pants": {
+          "add_to_cart": 21,
+          "click": 11,
+          "view": 25
+        },
+        "lstm:h3=click,click,add_to_cart|cat=shirt|pref=pants": {
+          "click": 5,
+          "add_to_cart": 3
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pants|pref=shirt": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click|cat=phone|pref=pants": {
+          "view": 6
+        },
+        "bilstm:prev=view|next=click|cat=tablet": {
+          "click": 22,
+          "view": 5,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=tablet": {
+          "add_to_cart": 6,
+          "click": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=tablet|pref=phone": {
+          "add_to_cart": 6,
+          "click": 6
+        },
+        "bilstm:prev=add_to_cart|next=click|cat=tablet": {
+          "add_to_cart": 20,
+          "click": 7
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=shirt|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=phone|pref=pc": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,view,add_to_cart|cat=laptop|pref=shirt": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=laptop": {
+          "click": 2,
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,add_to_cart,click|cat=shirt|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h2=add_to_cart,click|cat=shirt": {
+          "add_to_cart": 33,
+          "click": 12
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 9,
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pc|pref=shirt": {
+          "click": 1
+        },
+        "lstm:pref=shirt|brand=Lenovo": {
+          "click": 4,
+          "view": 6,
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click,add_to_cart|cat=tablet|pref=tablet": {
+          "add_to_cart": 14,
+          "click": 4
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=tablet": {
+          "click": 7,
+          "add_to_cart": 13
+        },
+        "lstm:h3=view|cat=pc|pref=shirt": {
+          "view": 4
+        },
+        "lstm:h3=view,view,click|cat=tablet|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=tablet": {
+          "add_to_cart": 5,
+          "click": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pc|pref=laptop": {
+          "add_to_cart": 16,
+          "click": 14
+        },
+        "bilstm:prev=add_to_cart|next=click|cat=pc": {
+          "add_to_cart": 20,
+          "click": 13
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=laptop|pref=pc": {
+          "click": 6,
+          "add_to_cart": 7
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pc|pref=laptop": {
+          "add_to_cart": 5
+        },
+        "lstm:h3=click,view,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 16,
+          "click": 2
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 4,
+          "click": 1
+        },
+        "lstm:h3=view,click,view|cat=laptop|pref=phone": {
+          "click": 5
+        },
+        "lstm:pref=phone|brand=Dell": {
+          "click": 6,
+          "view": 1,
+          "add_to_cart": 6
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=laptop": {
+          "add_to_cart": 4,
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=phone": {
+          "add_to_cart": 10
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=shirt": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 6,
+          "click": 1
+        },
+        "lstm:h3=view|cat=tablet|pref=shirt": {
+          "click": 7
+        },
+        "lstm:pref=tablet|brand=HP": {
+          "add_to_cart": 3,
+          "click": 8,
+          "view": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=phone|pref=pc": {
+          "add_to_cart": 2,
+          "click": 2
+        },
+        "lstm:h3=view,view,click|cat=tablet|pref=shirt": {
+          "click": 2
+        },
+        "lstm:pref=tablet|brand=Dell": {
+          "add_to_cart": 5,
+          "click": 5
+        },
+        "lstm:h3=click,click,add_to_cart|cat=tablet|pref=laptop": {
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pc|pref=laptop": {
+          "click": 1,
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=pants": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pants|pref=phone": {
+          "add_to_cart": 3
+        },
+        "lstm:pref=phone|brand=Adidas": {
+          "add_to_cart": 15,
+          "click": 16,
+          "view": 3
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=shirt|pref=pants": {
+          "add_to_cart": 7,
+          "click": 6
+        },
+        "lstm:h3=view,click|cat=phone|pref=shirt": {
+          "view": 5
+        },
+        "lstm:h3=view,click,view|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:h2=click,view|cat=pc": {
+          "click": 5,
+          "add_to_cart": 1
+        },
+        "bilstm:prev=view|next=add_to_cart|cat=pc": {
+          "click": 3
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=pc": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=shirt|pref=phone": {
+          "click": 1,
+          "add_to_cart": 2
+        },
+        "bilstm:prev=click|next=end|cat=shirt": {
+          "click": 7,
+          "add_to_cart": 19
+        },
+        "lstm:h3=view,view|cat=shirt|pref=pc": {
+          "click": 4
+        },
+        "lstm:pref=pc|brand=Nike": {
+          "click": 14,
+          "add_to_cart": 10,
+          "view": 2
+        },
+        "lstm:h3=view,view,click|cat=laptop|pref=shirt": {
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=shirt|pref=pc": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pc|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=pants|pref=phone": {
+          "add_to_cart": 3,
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 5
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=shirt|pref=shirt": {
+          "click": 5,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=tablet|pref=tablet": {
+          "add_to_cart": 10,
+          "click": 1
+        },
+        "lstm:h2=add_to_cart,add_to_cart|cat=tablet": {
+          "add_to_cart": 31,
+          "click": 16
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=phone|pref=tablet": {
+          "click": 5,
+          "add_to_cart": 5
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=tablet": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=laptop": {
+          "add_to_cart": 7
+        },
+        "bilstm:prev=start|next=click|cat=laptop": {
+          "view": 5
+        },
+        "lstm:h3=view|cat=tablet|pref=laptop": {
+          "click": 2,
+          "view": 5
+        },
+        "lstm:h3=view,click|cat=shirt|pref=tablet": {
+          "view": 5
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pants|pref=pants": {
+          "click": 3,
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,view|cat=pants|pref=tablet": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=pants": {
+          "click": 1,
+          "add_to_cart": 11
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=shirt|pref=pc": {
+          "click": 2,
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=shirt": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=pants|pref=pants": {
+          "view": 25
+        },
+        "lstm:h3=view,click,view|cat=tablet|pref=pants": {
+          "click": 5,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 7
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=tablet|pref=tablet": {
+          "view": 23
+        },
+        "lstm:h3=view,view|cat=pc|pref=tablet": {
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,click,click|cat=laptop|pref=laptop": {
+          "click": 2
+        },
+        "lstm:h3=view,click|cat=pc|pref=shirt": {
+          "view": 4
+        },
+        "lstm:h3=view,click,view|cat=pc|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=pc": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,click|cat=pants|pref=shirt": {
+          "add_to_cart": 5
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=tablet": {
+          "click": 8,
+          "add_to_cart": 4
+        },
+        "lstm:h3=click,click,click|cat=phone|pref=tablet": {
+          "add_to_cart": 4
+        },
+        "lstm:h3=click,click,add_to_cart|cat=phone|pref=phone": {
+          "add_to_cart": 5,
+          "click": 2
+        },
+        "lstm:h3=view|cat=shirt|pref=pc": {
+          "view": 2,
+          "click": 3
+        },
+        "lstm:h3=view,view|cat=laptop|pref=shirt": {
+          "click": 4
+        },
+        "lstm:h3=view,view,click|cat=phone|pref=laptop": {
+          "click": 3
+        },
+        "lstm:h3=view,click,click|cat=pc|pref=phone": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pc|pref=pc": {
+          "add_to_cart": 15,
+          "click": 5
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pc|pref=pc": {
+          "click": 5,
+          "add_to_cart": 8
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=laptop|pref=pc": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=shirt|pref=pants": {
+          "add_to_cart": 9
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pants|pref=shirt": {
+          "click": 4,
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=phone": {
+          "add_to_cart": 4
+        },
+        "lstm:h3=click,click,add_to_cart|cat=tablet|pref=tablet": {
+          "add_to_cart": 5
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=laptop": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=phone": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=tablet|pref=shirt": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=phone|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pants|pref=phone": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=shirt|pref=pants": {
+          "add_to_cart": 4,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pc|pref=pc": {
+          "add_to_cart": 5
+        },
+        "lstm:h3=click,view,add_to_cart|cat=shirt|pref=pants": {
+          "add_to_cart": 7,
+          "click": 4
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pants|pref=shirt": {
+          "click": 6,
+          "add_to_cart": 6
+        },
+        "lstm:h3=view|cat=laptop|pref=pants": {
+          "click": 1,
+          "view": 3
+        },
+        "lstm:pref=pants|brand=Asus": {
+          "click": 2,
+          "add_to_cart": 4,
+          "view": 3
+        },
+        "bilstm:prev=view|next=view|cat=laptop": {
+          "click": 12
+        },
+        "lstm:h3=view,click|cat=pants|pref=laptop": {
+          "view": 1
+        },
+        "lstm:h3=click,view,click|cat=laptop|pref=shirt": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pants|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=pants": {
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=tablet|pref=phone": {
+          "add_to_cart": 7,
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=tablet": {
+          "add_to_cart": 4,
+          "click": 1
+        },
+        "bilstm:prev=start|next=view|cat=phone": {
+          "view": 3
+        },
+        "lstm:h3=view|cat=laptop|pref=phone": {
+          "view": 2,
+          "click": 5
+        },
+        "lstm:h3=view,view|cat=tablet|pref=laptop": {
+          "click": 5
+        },
+        "lstm:h2=view,view|cat=tablet": {
+          "click": 5
+        },
+        "lstm:h3=view,view,click|cat=tablet|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pants|pref=shirt": {
+          "add_to_cart": 9
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=phone|pref=phone": {
+          "add_to_cart": 6
+        },
+        "lstm:h3=view,add_to_cart,click|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pants|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=phone|pref=phone": {
+          "click": 3,
+          "add_to_cart": 9
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=tablet": {
+          "click": 3
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pc|pref=pants": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=pc": {
+          "add_to_cart": 2,
+          "click": 5
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=tablet|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,click|cat=shirt|pref=shirt": {
+          "click": 2,
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,click|cat=shirt|pref=shirt": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pants|pref=shirt": {
+          "add_to_cart": 4,
+          "click": 2
+        },
+        "lstm:h3=click,view,click|cat=pants|pref=tablet": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h3=view,click,add_to_cart|cat=laptop|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pants|pref=laptop": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,view|cat=pants|pref=pc": {
+          "click": 3
+        },
+        "lstm:h2=view,view|cat=pants": {
+          "click": 4
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=pants": {
+          "click": 3
+        },
+        "lstm:h3=view,click,click|cat=pc|pref=pc": {
+          "add_to_cart": 18,
+          "click": 5
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pants|pref=phone": {
+          "add_to_cart": 4
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=laptop|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=shirt|pref=pants": {
+          "add_to_cart": 6
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=pants": {
+          "click": 1,
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=shirt|pref=phone": {
+          "click": 2
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=pc": {
+          "add_to_cart": 13
+        },
+        "lstm:h3=view,add_to_cart,click|cat=shirt|pref=shirt": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pants|pref=shirt": {
+          "add_to_cart": 4
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=laptop|pref=laptop": {
+          "click": 1,
+          "add_to_cart": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=shirt|pref=laptop": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=shirt|pref=shirt": {
+          "add_to_cart": 9,
+          "click": 3
+        },
+        "lstm:h3=click,add_to_cart,click|cat=shirt|pref=phone": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=tablet|pref=shirt": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=shirt|pref=pants": {
+          "add_to_cart": 4
+        },
+        "lstm:h3=view,view,click|cat=phone|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pc|pref=laptop": {
+          "add_to_cart": 6,
+          "click": 4
+        },
+        "lstm:h3=view|cat=pants|pref=tablet": {
+          "click": 3
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=laptop": {
+          "add_to_cart": 3,
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=phone|pref=shirt": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=phone": {
+          "click": 3,
+          "add_to_cart": 5
+        },
+        "lstm:h3=view|cat=pc|pref=phone": {
+          "view": 1,
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=laptop|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=laptop": {
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pc|pref=phone": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=click,click,click|cat=phone|pref=pc": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=phone": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=pc|pref=phone": {
+          "view": 1
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=pc": {
+          "click": 2
+        },
+        "lstm:h3=view,click,view|cat=pants|pref=pc": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=shirt|pref=shirt": {
+          "add_to_cart": 4,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=pc": {
+          "click": 10,
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,view,click|cat=shirt|pref=pc": {
+          "click": 2
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=shirt": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,view,click|cat=laptop|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=pants|pref=laptop": {
+          "add_to_cart": 1,
+          "click": 3
+        },
+        "lstm:h3=click,click,click|cat=shirt|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=phone|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=tablet|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pc|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pc|pref=pants": {
+          "click": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=pc": {
+          "click": 3
+        },
+        "lstm:h3=view,add_to_cart,click|cat=shirt|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view|cat=laptop|pref=tablet": {
+          "click": 3,
+          "view": 2
+        },
+        "lstm:h3=view,click|cat=tablet|pref=laptop": {
+          "view": 4
+        },
+        "lstm:h3=view,click,view|cat=laptop|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=view,click|cat=shirt|pref=laptop": {
+          "view": 3
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=shirt": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click|cat=phone|pref=laptop": {
+          "view": 4
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,view|cat=tablet|pref=shirt": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pants|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=pants": {
+          "click": 3,
+          "add_to_cart": 4
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pc|pref=pants": {
+          "add_to_cart": 2,
+          "click": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pants|pref=pc": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=view|cat=pants|pref=phone": {
+          "click": 6
+        },
+        "lstm:h3=view,click|cat=tablet|pref=pants": {
+          "view": 4
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=laptop|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pc|pref=pc": {
+          "click": 3,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pants|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view|cat=pants|pref=pc": {
+          "view": 3,
+          "click": 2
+        },
+        "lstm:h3=view,view|cat=pc|pref=pants": {
+          "click": 3
+        },
+        "lstm:pref=pants|brand=Lenovo": {
+          "click": 7,
+          "add_to_cart": 5,
+          "view": 1
+        },
+        "lstm:h3=view,view,click|cat=pants|pref=pc": {
+          "click": 3
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=laptop|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=pants": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=laptop|pref=laptop": {
+          "click": 3
+        },
+        "lstm:h3=click,click,click|cat=tablet|pref=phone": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=view,click,add_to_cart|cat=shirt|pref=pants": {
+          "click": 3,
+          "add_to_cart": 3
+        },
+        "lstm:h3=add_to_cart,click,click|cat=phone|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,click|cat=laptop|pref=pants": {
+          "add_to_cart": 4,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=pc": {
+          "add_to_cart": 7
+        },
+        "bilstm:prev=start|next=view|cat=tablet": {
+          "view": 3
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=laptop|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "bilstm:prev=view|next=view|cat=pc": {
+          "click": 3
+        },
+        "lstm:h3=view,click|cat=tablet|pref=pc": {
+          "view": 1
+        },
+        "lstm:h3=click,view,click|cat=pc|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=view,click,click|cat=phone|pref=pc": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "bilstm:prev=start|next=view|cat=pants": {
+          "view": 5
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=tablet|pref=tablet": {
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pc|pref=pc": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "bilstm:prev=start|next=click|cat=pc": {
+          "view": 8
+        },
+        "lstm:h3=view,click,view|cat=pc|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pc|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=shirt|pref=pc": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,view|cat=laptop|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=click,view,click|cat=pants|pref=pants": {
+          "add_to_cart": 3,
+          "click": 5
+        },
+        "lstm:h3=view,view|cat=phone|pref=laptop": {
+          "click": 3
+        },
+        "lstm:h2=view,view|cat=phone": {
+          "click": 5
+        },
+        "lstm:h3=view,view,click|cat=pc|pref=phone": {
+          "click": 3
+        },
+        "lstm:h3=click,click,click|cat=phone|pref=laptop": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=laptop|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pc|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=shirt|pref=pc": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=laptop|pref=phone": {
+          "add_to_cart": 2,
+          "click": 1
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=phone|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h2=view,add_to_cart|cat=phone": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=shirt|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pc|pref=shirt": {
+          "click": 1,
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pants|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,view|cat=pants|pref=phone": {
+          "click": 3,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,click|cat=pants|pref=pants": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=pants|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,view|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=tablet|pref=pc": {
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=laptop|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pants|pref=pants": {
+          "click": 2,
+          "add_to_cart": 5
+        },
+        "lstm:h3=view|cat=phone|pref=laptop": {
+          "click": 1,
+          "view": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pc|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=tablet|pref=pants": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=laptop|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=shirt|pref=pants": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=phone": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click|cat=pc|pref=pants": {
+          "view": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pants|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,view|cat=pc|pref=pants": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pc|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=laptop|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,view,click|cat=pants|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view|cat=pants|pref=laptop": {
+          "click": 2,
+          "view": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=phone|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view|cat=pc|pref=pants": {
+          "view": 2,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=laptop|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=click,view,click|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,click,click|cat=tablet|pref=tablet": {
+          "add_to_cart": 4,
+          "click": 3
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=phone|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=tablet|pref=shirt": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,view|cat=phone|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=view,view,click|cat=laptop|pref=phone": {
+          "click": 2
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=tablet|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pants|pref=tablet": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pants|pref=laptop": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view|cat=phone|pref=shirt": {
+          "click": 3
+        },
+        "lstm:h3=click,click,click|cat=pants|pref=pc": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=pants|pref=pants": {
+          "add_to_cart": 3
+        },
+        "lstm:h3=view|cat=shirt|pref=laptop": {
+          "view": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pc|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=tablet|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=phone": {
+          "add_to_cart": 1,
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=pants": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,click,click|cat=shirt|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=click,click,click|cat=pants|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,click,add_to_cart|cat=laptop|pref=pants": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pc|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pants|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=phone|pref=pants": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pants|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=pants|pref=phone": {
+          "view": 3
+        },
+        "lstm:h3=click,click,click|cat=shirt|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pc|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=pants|pref=pc": {
+          "click": 3
+        },
+        "lstm:h3=click,click,click|cat=pc|pref=pants": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=click,view,add_to_cart|cat=pc|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=pants|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view|cat=tablet|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=click,view,click|cat=laptop|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pc|pref=tablet": {
+          "click": 2
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=phone|pref=pc": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,view,click|cat=shirt|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=click,click,add_to_cart|cat=laptop|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=pc|pref=shirt": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=pants": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=laptop|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=shirt|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pc|pref=tablet": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=laptop|pref=tablet": {
+          "view": 1
+        },
+        "lstm:h3=view,click,view|cat=tablet|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=shirt|pref=phone": {
+          "click": 2,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=phone|pref=shirt": {
+          "click": 2
+        },
+        "lstm:h3=view,click,add_to_cart|cat=phone|pref=shirt": {
+          "click": 1,
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,view,click|cat=laptop|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=view|cat=phone|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=shirt|pref=phone": {
+          "click": 2
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=phone|pref=pants": {
+          "click": 3,
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=pc": {
+          "add_to_cart": 3,
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=pc|pref=pants": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view|cat=pc|pref=tablet": {
+          "click": 1,
+          "view": 1
+        },
+        "lstm:h3=view,click|cat=pc|pref=pc": {
+          "view": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=shirt|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=phone|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=tablet|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,click|cat=laptop|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,click|cat=shirt|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,view,click|cat=shirt|pref=phone": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=phone|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=phone|pref=pants": {
+          "add_to_cart": 1,
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pants|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,click|cat=phone|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pants|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,view,click|cat=phone|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=pc|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=view,view|cat=laptop|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=laptop|pref=pc": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=add_to_cart,click,click|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=laptop|pref=pc": {
+          "view": 1
+        },
+        "lstm:h3=view,click,view|cat=shirt|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click|cat=laptop|pref=phone": {
+          "view": 1
+        },
+        "lstm:h3=view,click,view|cat=phone|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=view,click,click|cat=tablet|pref=shirt": {
+          "click": 1
+        },
+        "lstm:h3=view,add_to_cart,click|cat=shirt|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=shirt|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=pants|pref=pc": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=tablet|pref=laptop": {
+          "add_to_cart": 2
+        },
+        "lstm:h3=view,click,click|cat=pants|pref=tablet": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=laptop|pref=phone": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,click|cat=shirt|pref=pc": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,view|cat=phone|pref=pants": {
+          "click": 1
+        },
+        "lstm:h3=click,view,add_to_cart|cat=laptop|pref=pants": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,add_to_cart,add_to_cart|cat=pants|pref=laptop": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=click,click,click|cat=pants|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,add_to_cart,add_to_cart|cat=tablet|pref=laptop": {
+          "click": 1
+        },
+        "lstm:h3=add_to_cart,add_to_cart,add_to_cart|cat=laptop|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=view,click,add_to_cart|cat=tablet|pref=shirt": {
+          "add_to_cart": 1
+        },
+        "lstm:h3=add_to_cart,click,add_to_cart|cat=pc|pref=phone": {
+          "click": 1
+        },
+        "lstm:h3=click,view,click|cat=pants|pref=laptop": {
+          "add_to_cart": 1
+        }
+      },
+      "global_counts": {
+        "view": 800,
+        "click": 1273,
+        "add_to_cart": 1127
+      }
+    }
+  }
+}

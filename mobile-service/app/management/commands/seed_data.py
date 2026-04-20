@@ -6,9 +6,11 @@ class Command(BaseCommand):
     help = 'Seed mobile products data'
 
     def handle(self, *args, **options):
-        if MobileProduct.objects.exists():
-            self.stdout.write('Mobile products already seeded.')
-            return
+        target_per_category = 10
+        counts = {
+            'phone': MobileProduct.objects.filter(category='phone').count(),
+            'tablet': MobileProduct.objects.filter(category='tablet').count(),
+        }
 
         products = [
             {
@@ -141,8 +143,40 @@ class Command(BaseCommand):
             },
         ]
 
-        for product_data in products:
+        to_create = []
+        for category in ['phone', 'tablet']:
+            count = counts[category]
+            if count >= target_per_category:
+                continue
+
+            base = [p for p in products if p['category'] == category]
+            for p in base:
+                if count >= target_per_category:
+                    break
+                to_create.append(p)
+                count += 1
+
+            for i in range(target_per_category - count):
+                idx = count + i + 1
+                to_create.append({
+                    'name': f'{category.title()} Sample {idx}',
+                    'brand': 'TechStore',
+                    'category': category,
+                    'price': 9990000 + (idx * 100000),
+                    'stock': 20 + (idx % 10),
+                    'description': 'Sản phẩm mẫu bổ sung để đủ 10 sản phẩm cho từng loại.',
+                    'image_url': f'https://picsum.photos/400/400?random=90{category[:1]}{idx}',
+                    'specs': {
+                        'screen': '6.5 inch OLED',
+                        'ram': '8GB',
+                        'storage': '256GB',
+                        'battery': '4500mAh',
+                        'camera': '50MP',
+                    }
+                })
+
+        for product_data in to_create:
             MobileProduct.objects.create(**product_data)
             self.stdout.write(f'Created: {product_data["name"]}')
 
-        self.stdout.write(self.style.SUCCESS('Mobile products seeded successfully!'))
+        self.stdout.write(self.style.SUCCESS(f'Seeded {len(to_create)} mobile products.'))

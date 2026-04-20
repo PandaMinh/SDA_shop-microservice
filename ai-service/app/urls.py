@@ -7,4 +7,5 @@ urlpatterns = [
     path("events/", views.track_event),
     path("chat/", views.chat),
     path("recommendations/", views.recommendations),
+    path("assignment-summary/", views.assignment_summary),
 ]

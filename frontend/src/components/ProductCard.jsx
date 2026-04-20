@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import api from '../api';
+import { isFavorite, toggleFavorite } from '../utils/favorites';
 
 const formatPrice = (price) => {
   return new Intl.NumberFormat('vi-VN').format(price) + ' đ';
@@ -16,6 +17,12 @@ export default function ProductCard({ product }) {
   const [added, setAdded] = useState(false);
   const [favorite, setFavorite] = useState(false);
 
+  const productType = product.type || (product.category === 'phone' || product.category === 'tablet' ? 'mobile' : 'desktop');
+
+  useEffect(() => {
+    setFavorite(isFavorite(product.id, productType));
+  }, [product.id, productType]);
+
   const stockStatus = () => {
     if (product.stock === 0) return { text: 'Hết hàng', color: 'var(--danger)' };
     if (product.stock <= 5) return { text: `Còn ${product.stock} sản phẩm`, color: 'var(--warning)' };
@@ -23,7 +30,20 @@ export default function ProductCard({ product }) {
   };
 
   const stock = stockStatus();
-  const productType = product.type || (product.category === 'phone' || product.category === 'tablet' ? 'mobile' : 'desktop');
+
+  const handleCardClick = () => {
+    if (user?.customer_id) {
+      api.post('/api/ai/events', {
+        customer_id: user.customer_id,
+        event_type: 'click',
+        product_id: product.id,
+        product_type: productType,
+        product_name: product.name,
+        metadata: { brand: product.brand, category: product.category },
+      }).catch(() => {});
+    }
+    navigate(`/product/${productType}/${product.id}`);
+  };
 
   const handleAddToCart = async (e) => {
     e.stopPropagation();
@@ -54,9 +74,19 @@ export default function ProductCard({ product }) {
     }
   };
 
-  const toggleFavorite = (e) => {
+  const handleToggleFavorite = (e) => {
     e.stopPropagation();
-    const next = !favorite;
+    const payload = {
+      id: product.id,
+      type: productType,
+      name: product.name,
+      brand: product.brand,
+      category: product.category,
+      price: product.price,
+      image_url: product.image_url,
+      stock: product.stock,
+    };
+    const next = toggleFavorite(payload);
     setFavorite(next);
     if (user?.customer_id) {
       api.post('/api/ai/events', {
@@ -85,7 +115,7 @@ export default function ProductCard({ product }) {
     <div
       className="card"
       style={{ padding: 0, cursor: 'pointer', overflow: 'hidden', transition: 'all 0.25s', display: 'flex', flexDirection: 'column' }}
-      onClick={() => navigate(`/product/${productType}/${product.id}`)}
+      onClick={handleCardClick}
       onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(79, 70, 229, 0.1)'; e.currentTarget.style.borderColor = 'rgba(79, 70, 229, 0.3)'; }}
       onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = ''; e.currentTarget.style.borderColor = ''; }}
     >
@@ -125,7 +155,7 @@ export default function ProductCard({ product }) {
         <button
           className="btn btn-secondary btn-sm"
           style={{ width: '100%', marginTop: 4, fontSize: 13, padding: '10px' }}
-          onClick={toggleFavorite}
+          onClick={handleToggleFavorite}
         >
           {favorite ? '♥ Đã yêu thích' : '♡ Yêu thích'}
         </button>

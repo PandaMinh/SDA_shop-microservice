@@ -30,6 +30,11 @@ export default function AIChatBubble() {
     () => (user?.name ? `Xin chào ${user.name}, mình có thể gợi ý gì?` : 'Hỏi mình để tìm sản phẩm phù hợp'),
     [user],
   );
+  const quickPrompts = [
+    'Tìm laptop học lập trình dưới 25 triệu',
+    'Gợi ý điện thoại chụp ảnh đẹp',
+    'Tôi đang cần thêm đồ liên quan đến giỏ hàng',
+  ];
 
   const sendMessage = async () => {
     const text = message.trim();
@@ -43,7 +48,12 @@ export default function AIChatBubble() {
         message: text,
         customer_id: user?.customer_id || null,
       });
-      setMessages(prev => [...prev, { role: 'assistant', text: res.data.answer || 'Mình chưa có phản hồi.' }]);
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        text: res.data.answer || 'Mình chưa có phản hồi.',
+        sources: res.data.sources || [],
+        graphFacts: res.data.graph_facts || [],
+      }]);
     } catch (err) {
       setMessages(prev => [...prev, { role: 'assistant', text: 'Hệ thống AI đang tạm thời không phản hồi.' }]);
     } finally {
@@ -57,18 +67,37 @@ export default function AIChatBubble() {
         <div style={{
           width: 360,
           height: 520,
-          background: 'var(--bg-elevated)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: 20,
-          boxShadow: '0 24px 60px rgba(15, 23, 42, 0.18)',
+          background: 'linear-gradient(180deg, #fffaf2 0%, #ffffff 28%, #fff 100%)',
+          border: '1px solid rgba(217, 119, 6, 0.16)',
+          borderRadius: 24,
+          boxShadow: '0 30px 90px rgba(15, 23, 42, 0.16)',
           overflow: 'hidden',
           marginBottom: 12,
           display: 'flex',
           flexDirection: 'column',
         }}>
-          <div style={{ padding: 16, background: 'var(--accent-gradient)', color: '#fff' }}>
-            <div style={{ fontWeight: 700, fontSize: 15 }}>AI Shopping Assistant</div>
-            <div style={{ fontSize: 12, opacity: 0.9, marginTop: 4 }}>{header}</div>
+          <div style={{ padding: 18, background: 'linear-gradient(135deg, #0f172a 0%, #1d4ed8 58%, #f59e0b 100%)', color: '#fff' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'center' }}>
+              <div>
+                <div style={{ fontWeight: 800, fontSize: 16, letterSpacing: 0.2 }}>TechStore AI Concierge</div>
+                <div style={{ fontSize: 12, opacity: 0.9, marginTop: 4 }}>{header}</div>
+              </div>
+              <div style={{ fontSize: 11, padding: '6px 10px', borderRadius: 999, background: 'rgba(255,255,255,0.16)' }}>
+                KB_Graph + RAG
+              </div>
+            </div>
+          </div>
+          <div style={{ padding: '12px 16px 0', display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            {quickPrompts.map(prompt => (
+              <button
+                key={prompt}
+                type="button"
+                onClick={() => setMessage(prompt)}
+                style={{ border: '1px solid rgba(148, 163, 184, 0.35)', background: '#fff', borderRadius: 999, padding: '7px 12px', fontSize: 12, cursor: 'pointer', color: 'var(--text-secondary)' }}
+              >
+                {prompt}
+              </button>
+            ))}
           </div>
           <div style={{ flex: 1, overflowY: 'auto', padding: 16, display: 'flex', flexDirection: 'column', gap: 10 }}>
             {messages.length === 0 ? (
@@ -90,6 +119,21 @@ export default function AIChatBubble() {
                 }}
               >
                 {item.text}
+                {item.sources?.length > 0 && (
+                  <div style={{ marginTop: 10, display: 'grid', gap: 8 }}>
+                    {item.sources.slice(0, 3).map(source => (
+                      <div key={`${source.id}-${source.type || 'mix'}`} style={{ padding: '8px 10px', borderRadius: 12, background: '#fff', border: '1px solid rgba(148, 163, 184, 0.2)' }}>
+                        <div style={{ fontWeight: 700, fontSize: 12 }}>{source.name}</div>
+                        <div style={{ fontSize: 11, color: 'var(--text-secondary)', marginTop: 2 }}>{source.brand} • {source.category} • {source.price} đ</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {item.graphFacts?.length > 0 && (
+                  <div style={{ marginTop: 8, fontSize: 11, color: 'var(--text-muted)' }}>
+                    Graph: {item.graphFacts.slice(0, 2).join(' | ')}
+                  </div>
+                )}
               </div>
             ))}
             {loading && <div style={{ fontSize: 13, color: 'var(--text-muted)' }}>Đang tìm gợi ý...</div>}
@@ -109,7 +153,7 @@ export default function AIChatBubble() {
           </div>
         </div>
       )}
-      <button className="btn btn-primary" onClick={() => setOpen(v => !v)} style={{ borderRadius: 999, padding: '14px 18px' }}>
+      <button className="btn btn-primary" onClick={() => setOpen(v => !v)} style={{ borderRadius: 999, padding: '14px 18px', boxShadow: '0 16px 40px rgba(245, 158, 11, 0.28)' }}>
         {open ? 'Đóng chat' : 'AI Chat'}
       </button>
     </div>

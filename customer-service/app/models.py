@@ -48,6 +48,7 @@ class OrderItem(models.Model):
     PRODUCT_TYPE_CHOICES = [
         ('mobile', 'Mobile'),
         ('desktop', 'Desktop'),
+        ('clothes', 'Clothes'),
     ]
 
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
@@ -59,3 +60,18 @@ class OrderItem(models.Model):
 
     class Meta:
         db_table = 'order_items'
+
+
+class Review(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='reviews', db_constraint=False)
+    customer_id = models.IntegerField(db_index=True)
+    product_id = models.IntegerField()
+    product_type = models.CharField(max_length=20)
+    rating = models.IntegerField()
+    comment = models.TextField(blank=True, default="")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'order_reviews'
+        unique_together = ('order', 'product_id', 'product_type')

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import RecommendationPanel from '../components/RecommendationPanel';
 
 const formatPrice = (price) => new Intl.NumberFormat('vi-VN').format(price) + ' đ';
 
@@ -28,6 +29,13 @@ export default function CartPage() {
         <h1 className="page-title">🛒 Giỏ Hàng</h1>
         <p className="page-subtitle">{items.length} sản phẩm trong giỏ</p>
       </div>
+
+      <RecommendationPanel
+        title="Gợi ý khi bạn đang chọn giỏ hàng"
+        subtitle="Các sản phẩm được xếp hạng theo hành vi add_to_cart và model_best"
+        signal="add_to_cart"
+        emptyMessage="Chưa có gợi ý bổ sung từ hành vi giỏ hàng."
+      />
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 32, alignItems: 'start' }}>
         {/* Items */}

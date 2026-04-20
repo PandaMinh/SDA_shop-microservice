@@ -79,6 +79,7 @@ export default function Navbar() {
                   }}>{count > 9 ? '9+' : count}</span>
                 )}
               </Link>
+              <Link to="/favorites" style={linkStyle('/favorites')}>💖 Yêu Thích</Link>
               <Link to="/orders" style={linkStyle('/orders')}>Đơn Hàng</Link>
             </>
           )}

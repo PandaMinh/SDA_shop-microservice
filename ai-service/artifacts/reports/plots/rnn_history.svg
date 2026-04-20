@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="320">
+<rect width="100%" height="100%" fill="#ffffff" rx="18" />
+<text x="40" y="36" font-size="22" font-weight="700" fill="#0f172a">Lich su hoc tap RNN</text>
+<text x="40" y="60" font-size="13" fill="#475569">Theo doi Accuracy va F1-macro qua 6 epoch</text>
+<line x1="70" y1="250.00" x2="690" y2="250.00" stroke="#dbeafe" stroke-width="1" /><line x1="70" y1="207.50" x2="690" y2="207.50" stroke="#dbeafe" stroke-width="1" /><line x1="70" y1="165.00" x2="690" y2="165.00" stroke="#dbeafe" stroke-width="1" /><line x1="70" y1="122.50" x2="690" y2="122.50" stroke="#dbeafe" stroke-width="1" /><line x1="70" y1="80.00" x2="690" y2="80.00" stroke="#dbeafe" stroke-width="1" />
+<line x1="70" y1="250" x2="690" y2="250" stroke="#94a3b8" stroke-width="1.5" />
+<line x1="70" y1="250" x2="70" y2="80" stroke="#94a3b8" stroke-width="1.5" />
+<text x="70.00" y="274" font-size="12" text-anchor="middle" fill="#475569">E1</text><text x="194.00" y="274" font-size="12" text-anchor="middle" fill="#475569">E2</text><text x="318.00" y="274" font-size="12" text-anchor="middle" fill="#475569">E3</text><text x="442.00" y="274" font-size="12" text-anchor="middle" fill="#475569">E4</text><text x="566.00" y="274" font-size="12" text-anchor="middle" fill="#475569">E5</text><text x="690.00" y="274" font-size="12" text-anchor="middle" fill="#475569">E6</text>
+<text x="52" y="254.00" font-size="11" text-anchor="end" fill="#475569">0.00</text><text x="52" y="211.50" font-size="11" text-anchor="end" fill="#475569">0.25</text><text x="52" y="169.00" font-size="11" text-anchor="end" fill="#475569">0.50</text><text x="52" y="126.50" font-size="11" text-anchor="end" fill="#475569">0.75</text><text x="52" y="84.00" font-size="11" text-anchor="end" fill="#475569">1.00</text>
+<polyline fill="none" stroke="#2563eb" stroke-width="3" points="70.00,146.30 194.00,145.02 318.00,141.00 442.00,138.85 566.00,138.85 690.00,138.85" />
+<polyline fill="none" stroke="#f97316" stroke-width="3" points="70.00,145.43 194.00,143.60 318.00,140.21 442.00,138.48 566.00,138.48 690.00,138.48" />
+<circle cx="560" cy="84" r="6" fill="#2563eb" />
+<text x="575" y="88" font-size="12" fill="#1e293b">Accuracy</text>
+<circle cx="560" cy="108" r="6" fill="#f97316" />
+<text x="575" y="112" font-size="12" fill="#1e293b">F1-macro</text>
+</svg>

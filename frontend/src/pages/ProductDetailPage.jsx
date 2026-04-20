@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import api from '../api';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import { isFavorite, toggleFavorite } from '../utils/favorites';
 
 const formatPrice = (price) => new Intl.NumberFormat('vi-VN').format(price) + ' đ';
 
@@ -47,11 +48,26 @@ export default function ProductDetailPage() {
     }).catch(() => {});
   }, [user, product, type]);
 
+  useEffect(() => {
+    if (!product) return;
+    setFavorite(isFavorite(product.id, type));
+  }, [product, type]);
+
   const handleAddToCart = async () => {
     if (!user) { navigate('/login'); return; }
     setAdding(true);
     try {
       await addToCart(parseInt(id), type, quantity);
+      if (user?.customer_id && product) {
+        api.post('/api/ai/events', {
+          customer_id: user.customer_id,
+          event_type: 'cart',
+          product_id: product.id,
+          product_type: type,
+          product_name: product.name,
+          metadata: { brand: product.brand, category: product.category, quantity },
+        }).catch(() => {});
+      }
       setAdded(true);
       setTimeout(() => setAdded(false), 2000);
     } catch (e) {
@@ -62,7 +78,17 @@ export default function ProductDetailPage() {
   };
 
   const handleFavorite = () => {
-    const next = !favorite;
+    const payload = {
+      id: product.id,
+      type,
+      name: product.name,
+      brand: product.brand,
+      category: product.category,
+      price: product.price,
+      image_url: product.image_url,
+      stock: product.stock,
+    };
+    const next = toggleFavorite(payload);
     setFavorite(next);
     if (user?.customer_id && product) {
       api.post('/api/ai/events', {

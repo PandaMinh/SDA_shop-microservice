@@ -41,6 +41,7 @@ urlpatterns = [
     # Orders
     path('api/orders/checkout', views.checkout),
     path('api/orders', views.customer_orders),
+    path('api/orders/<int:order_id>/reviews', views.create_review),
     path('api/admin/orders', views.admin_orders),
     path('api/admin/orders/<int:order_id>', views.update_order_status),
 
@@ -48,4 +49,5 @@ urlpatterns = [
     path('api/ai/chat', views.ai_chat),
     path('api/ai/events', views.ai_track_event),
     path('api/ai/recommendations', views.ai_recommendations),
+    path('api/ai/assignment-summary', views.ai_assignment_summary),
 ]

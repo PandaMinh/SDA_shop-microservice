@@ -173,6 +173,7 @@ export default function AdminPage() {
   const [activeTab, setActiveTab] = useState('products');
   const [productType, setProductType] = useState('mobile');
   const [products, setProducts] = useState([]);
+  const [productSearch, setProductSearch] = useState('');
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -232,6 +233,16 @@ export default function AdminPage() {
   };
 
   const filteredOrders = orders.filter(o => statusFilter === 'all' || o.status === statusFilter);
+  const searchTerm = productSearch.trim().toLowerCase();
+  const filteredProducts = products.filter(p => {
+    if (!searchTerm) return true;
+    return (
+      String(p.id).includes(searchTerm) ||
+      String(p.name || '').toLowerCase().includes(searchTerm) ||
+      String(p.brand || '').toLowerCase().includes(searchTerm) ||
+      String(p.category || '').toLowerCase().includes(searchTerm)
+    );
+  });
 
   return (
     <div className="container" style={{ padding: '40px 24px' }}>
@@ -263,6 +274,19 @@ export default function AdminPage() {
             </button>
           </div>
 
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, gap: 12 }}>
+            <input
+              className="form-input"
+              placeholder="Tìm theo tên, thương hiệu, loại, mã..."
+              value={productSearch}
+              onChange={e => setProductSearch(e.target.value)}
+              style={{ maxWidth: 360 }}
+            />
+            <div style={{ color: 'var(--text-muted)', fontSize: 13 }}>
+              {filteredProducts.length} sản phẩm
+            </div>
+          </div>
+
           <div className="table-container">
             <table>
               <thead>
@@ -279,9 +303,9 @@ export default function AdminPage() {
               <tbody>
                 {loading ? (
                   <tr><td colSpan={7} style={{ textAlign: 'center', padding: 40 }}><span className="loading-spinner"></span></td></tr>
-                ) : products.length === 0 ? (
+                ) : filteredProducts.length === 0 ? (
                   <tr><td colSpan={7} style={{ textAlign: 'center', padding: 40, color: 'var(--text-muted)' }}>Chưa có sản phẩm</td></tr>
-                ) : products.map(p => (
+                ) : filteredProducts.map(p => (
                   <tr key={p.id}>
                     <td>
                       <img src={p.image_url || `https://picsum.photos/48/48?random=${p.id}`} alt={p.name} style={{ width: 48, height: 48, borderRadius: 8, objectFit: 'cover' }} onError={e => { e.target.src = `https://picsum.photos/48/48?random=${p.id + 5}`; }} />

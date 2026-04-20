@@ -4,8 +4,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.hashers import make_password, check_password
-from .models import Customer, Order, OrderItem
-from .serializers import CustomerSerializer, OrderSerializer, OrderItemSerializer
+from .models import Customer, Order, OrderItem, Review
+from .serializers import CustomerSerializer, OrderSerializer, OrderItemSerializer, ReviewSerializer
 
 MOBILE_SERVICE = getattr(settings, 'MOBILE_SERVICE_URL', 'http://mobile-service:8000')
 DESKTOP_SERVICE = getattr(settings, 'DESKTOP_SERVICE_URL', 'http://desktop-service:8000')
@@ -174,3 +174,51 @@ def order_detail(request, order_id):
         return Response(serializer.data)
     except Order.DoesNotExist:
         return Response({'error': 'Order not found'}, status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['POST'])
+def create_review(request, order_id):
+    customer_id = request.data.get('customer_id')
+    product_id = request.data.get('product_id')
+    product_type = request.data.get('product_type')
+    rating = request.data.get('rating')
+    comment = request.data.get('comment', '')
+
+    if not all([customer_id, product_id, product_type, rating]):
+        return Response({'error': 'Thiếu thông tin đánh giá'}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        rating = int(rating)
+    except (TypeError, ValueError):
+        return Response({'error': 'Điểm đánh giá không hợp lệ'}, status=status.HTTP_400_BAD_REQUEST)
+
+    if rating < 1 or rating > 5:
+        return Response({'error': 'Điểm đánh giá phải từ 1 đến 5'}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        order = Order.objects.get(pk=order_id)
+    except Order.DoesNotExist:
+        return Response({'error': 'Order not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    if str(order.customer_id) != str(customer_id):
+        return Response({'error': 'Không có quyền đánh giá đơn hàng này'}, status=status.HTTP_403_FORBIDDEN)
+
+    if order.status != 'delivered':
+        return Response({'error': 'Chỉ có thể đánh giá sau khi đơn hàng đã giao'}, status=status.HTTP_400_BAD_REQUEST)
+
+    has_item = OrderItem.objects.filter(order=order, product_id=product_id, product_type=product_type).exists()
+    if not has_item:
+        return Response({'error': 'Sản phẩm không thuộc đơn hàng này'}, status=status.HTTP_400_BAD_REQUEST)
+
+    if Review.objects.filter(order=order, product_id=product_id, product_type=product_type).exists():
+        return Response({'error': 'Bạn đã đánh giá sản phẩm này'}, status=status.HTTP_400_BAD_REQUEST)
+
+    review = Review.objects.create(
+        order=order,
+        customer_id=customer_id,
+        product_id=product_id,
+        product_type=product_type,
+        rating=rating,
+        comment=comment or '',
+    )
+    return Response(ReviewSerializer(review).data, status=status.HTTP_201_CREATED)
